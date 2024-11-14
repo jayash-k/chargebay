@@ -1,0 +1,451 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --dark-theme: #00060e;
+    --title-gray: #888;
+    --subtitle-gray: #7e7e7eb0;
+    --highlight-green: #0cc301;
+    --highlight-blue: #0774f3;
+}
+
+.commercial-hero.productspage {
+    display: flex;
+    background-color: #000000c2;
+    justify-content: start;
+    align-items: start;
+    z-index: 1;
+    padding-top: 7rem;
+    padding-left: 5rem;
+    padding-bottom: 18rem;
+}
+
+.commercial-hero-content.productspage {
+    width: 70%;
+}
+
+.commercial-hero-content.productspage h1 {
+    width: 90%;
+}
+
+.featured.productspage {
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.featured.productspage h2 {
+    font-size: 1.75rem;
+    color: #cbcfd2de;
+    font-weight: 500;
+}
+
+.productpageimg {
+    position: relative;
+    margin-top: 2rem;
+    margin-left: -10.5rem;
+}
+
+.productpageimg img {
+    position: absolute;
+}
+
+.why-chargebay-ecosystem {
+    background-color: var(--dark-theme);
+    color: #ffffff;
+    padding: 60px 8rem;
+    padding-right: 0;
+    font-family: Arial, sans-serif;
+}
+
+.why-chargebay-ecosystem-title {
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.why-chargebay-ecosystem img {
+    user-select: none;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .ecosystem-title {
+        font-size: 28px;
+    }
+
+    .ecosystem-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+
+
+.bcmpartner-section {
+    display: flex;
+    gap: 75px;
+    align-items: center;
+    background-color: var(--white);
+    padding: 14rem 4rem;
+    padding-left: 0;
+}
+
+.bcmpartner-section h1 {
+    font-size: 3rem;
+}
+
+.bcmpartner-section-image {
+    width: 45%;
+    height: 400px;
+    /* background-color: var(--dark-theme); */
+    border-top-right-radius: 550px;
+    border-bottom-right-radius: 550px;
+}
+
+.bcmpartner-section-image img {
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    user-select: none;
+    object-fit: cover;
+    border-top-right-radius: 450px;
+    border-bottom-right-radius: 450px;
+}
+
+.watch-demo-section-a {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.watch-demo-section {
+    height: 725px;
+    margin: 0;
+    background-color: #000000c2;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+    align-content: center;
+    text-align: center;
+}
+
+.watch-demo-section h1 {
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.watch-demo-section .playicon {
+    padding: 0 1rem;
+    padding-right: .8rem;
+    border: 5px solid white;
+    border-radius: 50%;
+}
+
+.charger-feature-section {
+    background-color: var(--dark-theme);
+    padding: 10rem 0;
+}
+
+.charger-feature-section-content-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    background-color: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.charger-feature-section-text-content {
+    flex: 1.3;
+    padding: 40px;
+}
+
+.charger-feature-section-text-content ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.charger-feature-section-text-content li {
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: var(--dark-theme);
+}
+
+.charger-feature-section-image-content {
+    width: 100%;
+    height: 100%;
+    flex: 1;
+}
+
+.charger-feature-section-image-content img {
+    width: 140%;
+    height: 100%;
+    margin-bottom: -2rem;
+    object-fit: fill;
+}
+
+@media (max-width: 768px) {
+    .charger-feature-section-content-wrapper {
+        flex-direction: column;
+    }
+
+    .charger-feature-section-image-content {
+        order: -1;
+    }
+}
+
+.chargebay-ecosystem {
+    background-color: var(--dark-theme);
+    color: #ffffff;
+    padding: 60px 0;
+    font-family: Arial, sans-serif;
+}
+
+.chargebay-ecosystem-content-wrapper {
+    margin-left: 150px;
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.chargebay-ecosystem-text-content {
+    flex: 1;
+    padding-right: 0;
+}
+
+.chargebay-ecosystem-content-header {
+    padding-left: 150px;
+    padding-bottom: 50px;
+}
+
+.chargebay-ecosystem-content-header h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.chargebay-ecosystem-subtitle {
+    color: #fafafada;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+.chargebay-ecosystem-text-content p {
+    color: #fafafada;
+    font-size: 1.025rem;
+    font-weight: 400;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 83%;
+}
+
+.chargebay-ecosystem-image-content {
+    flex: .80;
+    width: 100%;
+    height: 380px;
+}
+
+.chargebay-ecosystem-image-content-app-screens {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+}
+
+
+.chargebay-forecast {
+    background-color: #f5f5f5;
+    padding: 12rem 0;
+    font-family: Arial, sans-serif;
+}
+
+.chargebay-forecast-content-wrapper {
+    margin-left: 10rem;
+    display: flex;
+    gap: 50px;
+}
+
+.chargebay-forecast-image-container {
+    flex: .5;
+}
+
+.chargebay-forecast-image-container img {
+    width: 90%;
+    height: 250px;
+}
+
+.chargebay-forecast-text-content {
+    flex: 1;
+    margin-top: -2rem;
+}
+
+.chargebay-forecast-text-content-headline {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.chargebay-forecast-text-content p {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-bottom: 20px;
+    max-width: 85%;
+    color: #07080c;
+}
+
+@media (max-width: 786px) {
+    .commercial-hero.productspage {
+        display: grid;
+        padding: 5rem 1rem;
+    }
+
+    .commercial-hero-content.productspage {
+        width: 100%;
+    }
+
+    .commercial-hero-content.productspage h1 {
+        font-size: 1.65rem;
+        width: 100%;
+    }
+
+    .productpageimg {
+        margin: 0;
+        margin-top: -1rem;
+    }
+
+    .productpageimg img {
+        position: relative;
+        width: 95%;
+    }
+
+    .chargebay-forecast {
+        padding: 0;
+    }
+
+    .chargebay-forecast-content-wrapper {
+        margin-left: 0;
+    }
+
+    .chargebay-forecast-image-container {
+        display: none;
+    }
+
+    .chargebay-forecast-text-content {
+        flex: 1;
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        padding: 0 1rem;
+    }
+
+    .chargebay-forecast-text-content-headline {
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .chargebay-forecast-text-content p {
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin-top: 2rem;
+        margin-left: 0;
+        margin-bottom: 20px;
+        max-width: 100%;
+    }
+
+    .why-chargebay-ecosystem {
+        padding: 5rem 1rem;
+    }
+
+    .why-chargebay-ecosystem-title {
+        font-size: 1.8rem;
+    }
+
+    .why-chargebay-ecosystem img {
+        margin: -1rem;
+    }
+
+    .why-chargebay-ecosystem img.firstImg {
+        margin: 0;
+    }
+
+    .chargebay-ecosystem-content-wrapper {
+        flex-direction: column;
+        margin: 0;
+        margin-left: 1rem;
+    }
+
+    .chargebay-ecosystem-content-header {
+        padding-left: 1rem;
+        padding-bottom: 20px;
+    }
+
+    .chargebay-ecosystem-content-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .chargebay-ecosystem-text-content p {
+        font-size: 1.125rem;
+        max-width: 95%;
+    }
+
+    .charger-feature-section {
+        padding: 5rem 0;
+    }
+
+    .charger-feature-section-content-wrapper{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .charger-feature-section-image-content {
+        padding: 0 0rem;
+        width: 95%;
+        overflow: hidden;
+    }
+
+    .charger-feature-section-image-content img {
+        width: 140%;
+        padding: 0 1rem;
+        height: 100%;
+        margin-bottom: 0;
+        object-fit: fill;
+    }
+
+    .watch-demo-section{
+        display: none;
+    }
+
+    .bcmpartner-section{
+        padding: 8rem 1rem;
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: start;
+        padding-left: 1rem;
+        gap: 50px;
+    }
+
+    .bcmpartner-section h1{
+        font-size: 2rem;
+        margin-bottom: 15px;
+    }
+
+    .bcmpartner-section-image{
+        width: 100%;
+        height: 275px;
+        
+    }
+    
+    .featured-logos.productspage img{
+        width: 100%;
+        height: 100%;
+        user-select: none;
+        pointer-events: none;
+    }
+}

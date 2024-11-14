@@ -1,0 +1,180 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --dark-theme: #00060e;
+    --title-gray: #888;
+    --subtitle-gray: #7e7e7eb0;
+    --highlight-green: #0cc301;
+    --highlight-blue: #0774f3;
+}
+
+.accordion-container.qasection {
+    padding: 0 9rem;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+}
+
+.accordion-container.qasection.hostQA {
+    background-color: #fafafa;
+}
+
+.accordion-container.qasection.driversQA {
+    background-color: var(--white);
+}
+
+.accordion-header .driversQAheader{
+    font-size: 1.5rem;
+    max-width: 88%;
+}
+
+.qa-hero {
+    display: flex;
+    background-color: #000000c2;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    padding-top: 10rem;
+    padding-left: 12rem;
+    padding-bottom: 15rem;
+}
+
+.qa-hero h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--white);
+    line-height: 1.4;
+}
+
+.faq-section {
+    display: grid;
+    margin: 0;
+    margin-bottom: 100px;
+    border-bottom: 1px solid var(--title-gray);
+}
+
+.faq-section h1 {
+    font-size: 2rem;
+    color: var(--black);
+    margin-bottom: 1.5rem;
+}
+
+.faq-section-all-faqs {
+    display: flex;
+}
+
+.faq-section-all-faqs a{
+    text-decoration: none;
+    color: none;
+    cursor: pointer;
+}
+
+.faq-section-all-faqs-host,
+.faq-section-all-faqs-driver {
+    display: grid;
+    flex: 1;
+}
+
+.faq-section-all-faqs-host h3,
+.faq-section-all-faqs-driver h3 {
+    font-size: 1.5rem;
+    color: var(--black);
+    font-weight: 600;
+    margin: 0;
+}
+
+.faq-section-all-faqs-host p,
+.faq-section-all-faqs-driver p {
+    color: var(--title-gray);
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.faq-section-all-faqs-host div {
+    display: flex;
+    gap: 75px;
+}
+
+.FAQ-header {
+    font-size: 2rem;
+    color: var(--black);
+    font-weight: bolder;
+    margin: 0;
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+.FAQ-sub-header {
+    font-size: 1.5rem;
+    color: var(--black);
+    font-weight: bolder;
+    margin: 0;
+    margin-bottom: 2.5rem;
+}
+
+.FAQ-detailes{
+    display: grid;
+    margin: 8rem 0;
+    gap: 10px;
+}
+
+.FAQ-detailes h1{
+    max-width: 100%;
+    font-size: 1.6rem;
+    list-style: 1.5;
+    color: var(--black);
+    font-weight: 550;
+    margin-bottom: 0;
+}
+
+@media (max-width : 786px) {
+    .qa-hero{
+        padding: 4rem 2rem;
+        padding-bottom: 8rem;
+    }
+
+    .qa-hero h1{
+        font-size: 2.4rem;
+    }
+
+    .accordion-container.qasection {
+        padding: 0 1.5rem;
+        padding-top: 2rem;
+        padding-bottom: 4rem;
+    }
+
+    .faq-section-all-faqs {
+        display: grid;
+    }
+
+    .FAQ-header {
+        font-size: 1.6rem;
+        margin-bottom: 30px;
+    }
+
+    .FAQ-sub-header {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+    }
+
+    .FAQ-detailes{
+        display: grid;
+        margin: 4rem 0;
+        gap: 5px;
+    }
+    
+    .FAQ-detailes h1{
+        max-width: 100%;
+        font-size: 1rem;
+        list-style: 1.5;
+        color: var(--black);
+        font-weight: 450;
+        margin-bottom: 0;
+    }
+
+    .accordion-header .driversQAheader{
+        font-size: 1.1rem;
+        max-width: 88%;
+    }
+    
+}

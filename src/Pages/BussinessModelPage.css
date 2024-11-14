@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --dark-theme: #00060e;
+  --title-gray: #888;
+  --subtitle-gray: #7e7e7eb0;
+  --highlight-green: #0cc301;
+  --highlight-blue: #0774f3;
+}
+
+.partners-hero-content.bussinessmodelhero {
+  padding-top: 8rem;
+}
+
+.uniquemodel-section {
+  display: flex;
+  width: auto;
+  height: auto;
+  justify-content: center;
+  background-color: var(--white);
+}
+
+.uniquemodel-section-cards {
+  margin-top: 200px;
+  margin-right: 5rem;
+  margin-bottom: 150px;
+  width: 275px;
+  height: 275px;
+  border-radius: 29px;
+  background-color: #f5f5f5;
+}
+
+.modeldetails-section {
+  padding: 75px 150px;
+  padding-top: 100px;
+  background-color: var(--dark-theme);
+  justify-content: center;
+}
+
+.modeldetails-section-cards {
+  background-color: var(--white);
+  width: 100%;
+  height: 650px;
+  border-radius: 29px;
+}
+
+.doubts.bussinessmodel {
+  margin-top: 200px;
+  margin-bottom: 150px;
+}
+
+.unique-model-container {
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 6rem 8rem;
+  padding: 20px;
+}
+
+.unique-model-header {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.unique-model-subheader {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.unique-model-models {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.unique-model-card {
+  background-color: #f5f5f5;
+  border-radius: 19px;
+  padding: 20px;
+  width: 350px;
+}
+
+.unique-model-card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 5px;
+}
+
+.unique-model-card p {
+  font-size: 1.095rem;
+  font-weight: 500;
+  line-height: 1.5;
+
+}
+
+@media (max-width: 768px) {
+  .unique-model-models {
+    flex-direction: column;
+  }
+
+  .unique-model-card {
+    width: 100%;
+  }
+}
+
+/*# model-details section start*/
+.model-details {
+  background-color: var(--dark-theme);
+  padding: 4rem 8rem;
+}
+
+.model-details h1 {
+  font-size: 2.5rem;
+  color: var(--white);
+  padding-left: 1.5rem;
+}
+
+.model-details img {
+  /* width: 100%; */
+  /* height: 100%; */
+  opacity: 1;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* .table-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+th,
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+thead tr:first-child th {
+  border-bottom: none;
+}
+
+th {
+  font-weight: bold;
+  background-color: #ffffff;
+}
+
+.ecosystem {
+  text-align: left;
+}
+
+.chargebay-partner {
+  margin: 1rem 10rem;
+  background-color: #000;
+  color: #ffffff;
+  border-radius: 8px 8px 0 0;
+}
+
+.subtitle {
+  font-weight: normal;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.subheader th {
+  font-weight: normal;
+  color: #666;
+  padding-top: 0.5rem;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #f8f8f8;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.25rem;
+}
+
+.percentage {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  background-color: #f0f0f0;
+  font-weight: bold;
+}
+
+.percentage.dark {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}
+
+.footnotes {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #ffffff;
+}
+
+.footnotes p {
+  margin: 0.25rem 0;
+} */
+
+@media (max-width: 768px) {
+
+  .partners-hero-content.bussinessmodelhero {
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+  }
+
+  .unique-model-container {
+    margin: 4rem 1.5rem;
+    padding: 0;
+  }
+
+  .unique-model-header {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .unique-model-card {
+    max-width: 100%;
+    width: fit-content;
+  }
+
+  .model-details {
+    padding: 1rem;
+    padding-right: 0;
+  }
+
+  .model-details h1 {
+    font-size: 1.8rem;
+    color: var(--white);
+    padding: 0;
+    margin-bottom: 5px;
+  }
+
+  .model-details img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+  }
+
+  /* .table-container {
+    overflow-x: auto;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th,
+  td {
+    padding: 0.75rem 0.5rem;
+  } */
+}
+
+/*# model-details section start*/

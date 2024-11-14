@@ -1,0 +1,925 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+
+:root {
+    --white: #fff;
+    --black: #000;
+    --dark-theme: #00060e;
+    --title-gray: #888;
+    --subtitle-gray: #7e7e7eb0;
+    --card-subtitle: #fbffffe3;
+    --highlight-green: #0cc301;
+    --highlight-blue: #0774f3;
+}
+
+.dropdown-arrow-grey{
+    width: 25px;
+    height: 25px;
+}
+
+/*# multifamily-hero section start*/
+.multifamily-hero {
+    display: flex;
+    background-color: #000000c2;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1;
+    padding-top: 3rem;
+    padding-left: 4rem;
+    padding-bottom: 12rem;
+}
+
+.multifamily-hero-content {
+    margin-top: 150px;
+    margin-left: 20px;
+}
+
+.multifamily-hero-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--white);
+    line-height: .1;
+}
+
+.multifamily-hero-content p {
+    max-width: 60%;
+    font-size: 1.35rem;
+    margin-bottom: 2rem;
+    color: #fff;
+}
+
+/*# multifamily-hero section end*/
+
+/*# consumerreport section start*/
+.consumer-reports {
+    margin: 4rem 0;
+    padding: 5rem 0;
+    padding-left: 10rem;
+    padding-right: 6rem;
+    background-color: var(--white);
+    font-family: Arial, sans-serif;
+    height: 130vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.consumer-reports-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.highlight {
+    color: #007bff;
+    text-decoration: underline 1.5px;
+}
+
+.contbtn {
+    padding: 0 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    cursor: pointer;
+    background-color: #00000000;
+    border-radius: 50px;
+    margin-bottom: 4rem;
+    align-self: flex-start;
+}
+
+.contbtn span {
+    color: var(--black);
+}
+
+.consumer-reports-cards-container {
+    flex-grow: 0;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.consumer-reports-card {
+    display: flex;
+    background-color: var(--dark-theme);
+    padding: 4rem 2rem;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 3rem;
+    height: 380px;
+    transition: opacity 0.3s ease;
+}
+
+.consumer-reports-card-content {
+    padding: 1.5rem;
+    flex: 1;
+    margin-top: 10%;
+}
+
+.consumer-reports-card h2 {
+    font-size: 1.5rem;
+    margin-bottom: -1rem;
+    color: var(--white);
+}
+
+.consumer-reports-card p {
+    font-size: 1.2rem;
+    color: var(--card-subtitle);
+    line-height: 1.2;
+    max-width: 85%;
+}
+
+.consumer-reports-card-image {
+    border-radius: 15px;
+    width: 45%;
+    object-fit: cover;
+}
+
+.consumer-reports-card.active {
+    opacity: 1;
+}
+
+/*# consumerreport section end*/
+
+/*# why-chargebay section start*/
+.why-chargebay-section {
+    background-color: var(--dark-theme);
+    color: white;
+    padding-top: 3rem;
+    padding-bottom: 5rem;
+    padding-left: 10rem;
+    font-family: Arial, sans-serif;
+}
+
+.why-chargebay-title {
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.why-chargebay-highlight {
+    color: #007bff;
+}
+
+.why-chargebay-cards {
+    display: flex;
+    flex-wrap: wrap;
+    column-count: 2;
+    gap: 50px;
+}
+
+.why-chargebay-card {
+    background: linear-gradient(150deg, #0000 0%, #030303 50%, #1d0a27 70%, #051420 100%);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #0466c8;
+    border-left: 1px solid #0466c8;
+    border-right: 1px solid #7d53b8;
+    border-bottom: 1px solid #7d53b8;
+    border-radius: 20px;
+    display: grid;
+    justify-content: space-around;
+    padding: 0 2rem;
+    padding-top: 2rem;
+    width: 450px;
+    min-height: 200px;
+    height: auto;
+}
+
+.why-chargebay-card-title {
+    font-size: 1.5rem;
+    max-width: 90%;
+    margin-bottom: 20px;
+}
+
+.why-chargebay-card-source {
+    justify-content: end;
+    font-size: 1rem;
+    color: #a9a9a9;
+}
+
+.why-chargebay-link {
+    color: #007bff;
+}
+
+.why-chargebay-link:hover {
+    text-decoration: underline;
+}
+
+/*# why-chargebay section end*/
+
+/*# problem-section start*/
+.problem-section {
+    margin: 0 auto;
+    padding: 9rem 10rem;
+    padding-bottom: 4rem;
+}
+
+.problem-section-title {
+    font-size: 2.6rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-red {
+    color: #e3342f;
+}
+
+.problem-section-text {
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 1.2;
+    max-width: 900px;
+    color: var(--title-gray);
+    margin-bottom: 1.5rem;
+}
+
+.highlight-bold {
+    color: var(--black);
+    font-weight: 600;
+}
+
+/*# problem-section end*/
+
+/*# help-secton start*/
+.help-section {
+    background-color: var(--dark-theme);
+    color: var(--white);
+    padding: 4rem 10rem;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+.help-section-container {
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+.help-section-title {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: -2rem;
+}
+
+.help-section-subtitle {
+    font-size: 1.6rem;
+    margin-bottom: 3rem;
+    color: var(--title-gray);
+}
+
+.help-section-flex {
+    display: flex;
+    gap: 2rem;
+}
+
+.help-section-flex-item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.icon-container {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.8 ease;
+}
+
+.icon {
+    width: 3rem;
+    height: 3rem;
+    color: #0c0d10;
+    animation: scaleinout 3s forwards infinite;
+}
+
+@keyframes scaleinout {
+    0% {
+        opacity: 0;
+        scale: 0;
+    }
+
+    40% {
+        opacity: 1;
+        scale: 1;
+    }
+
+    60% {
+        opacity: 1;
+        scale: 1;
+    }
+
+    100% {
+        opacity: 0;
+        scale: 0;
+    }
+
+}
+
+.help-section-flex-item-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.help-section-section-text {
+    font-size: 1.25rem;
+    margin-top: 2rem;
+    color: var(--title-gray);
+}
+
+/*# help-secton end*/
+
+/*# figureout section start*/
+.figureout {
+    display: grid;
+    height: auto;
+    padding: 4rem 10rem;
+}
+
+.figureout h1 {
+    font-size: 2.5rem;
+    color: var(--black);
+    line-height: .6;
+}
+
+.figureout-content {
+    display: flex;
+    width: auto;
+    height: auto;
+}
+
+.figureout-content-image {
+    width: 550px;
+    height: 350px;
+}
+
+.figureout-content-image img {
+    width: 100%;
+    height: 100%;
+}
+
+.figureout-content-para {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    padding-top: 0px;
+    padding-left: 100px;
+}
+
+.figureout-content-para p {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 12px 18px;
+    width: 380px;
+    margin-bottom: 25px;
+    border: .5px solid var(--subtitle-gray);
+    border-radius: 29px;
+    font-size: 1rem;
+    color: var(--subtitle-gray);
+}
+
+.figureout-content-para .arrow {
+    font-size: 1rem;
+}
+
+.figureout-content-para button {
+    margin-top: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+/*# figureout section end*/
+
+/*# trust section start*/
+.trust-section {
+    margin: 5rem 0;
+    padding-top: 2rem;
+    text-align: center;
+    color: var(--white);
+    background-color: var(--dark-theme);
+}
+
+.trust-section h1 {
+    font-size: 2rem;
+}
+
+.trust-section-logos {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.trust-section-logos img {
+    margin: 1rem;
+}
+
+/*# trust section end*/
+
+/*# bussiness-model section start*/
+
+.business-model-section {
+    padding-top: 100px;
+    padding-bottom: 150px;
+    padding-left: 150px;
+}
+
+.business-model-section h1 {
+    font-size: 2.5rem;
+    line-height: .5;
+}
+
+.business-model {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 35px;
+    background-color: var(--white);
+    font-family: Arial, sans-serif;
+}
+
+.business-model-contentainer {
+    margin-bottom: 35px;
+}
+
+.business-model-content {
+    flex: 1;
+    padding-top: 30px;
+    padding-right: 80px;
+    align-items: center;
+}
+
+.business-model-content-title {
+    font-size: 1.525rem;
+    color: var(--black);
+    font-weight: bold;
+    margin-bottom: -18px;
+}
+
+.business-model-content-subtitle {
+    font-size: 1.125rem;
+    color: var(--title-gray);
+    font-weight: 500;
+}
+
+.business-model-image {
+    width: 55%;
+    height: 100%;
+}
+
+.business-model-image img {
+    width: 100%;
+    height: 420px;
+    border-radius: 8px;
+}
+
+/*# bussiness-model section end*/
+
+/*# doubts section start*/
+.doubts {
+    background-color: #f7f7f7;
+    text-align: center;
+    padding: 2rem 2rem;
+    margin: 3rem 8rem;
+    border-radius: 22px;
+}
+
+.doubts h2 {
+    font-size: 2.6rem;
+    font-weight: 500;
+}
+
+/*# doubts section end*/
+
+/*#case study section start*/
+.case-study {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 150px;
+    padding-bottom: 150px;
+    padding-left: 120px;
+    background-color: var(--white);
+    font-family: Arial, sans-serif;
+}
+
+.case-study-content {
+    flex: 1;
+    padding-top: 80px;
+    padding-right: 80px;
+    padding-bottom: 80px;
+}
+
+.case-study-subtitle {
+    font-size: 18px;
+    color: #a7a7a7;
+    margin-bottom: 16px;
+    font-weight: normal;
+}
+
+.case-study-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 24px;
+    line-height: 1.2;
+}
+
+.case-study-description {
+    font-size: 18px;
+    font-weight: 500;
+    color: #4f4f4f;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.case-study-image {
+    width: 50%;
+    height: 100%;
+}
+
+.case-study-image img {
+    width: 100%;
+    height: 550px;
+    border-radius: 8px;
+}
+
+/*#case study secion end*/
+
+@media (max-width: 480px) {
+
+    /*# multifamily-hero section start*/
+
+    .multifamily-hero {
+        padding: 0;
+    }
+
+    .multifamily-hero-content {
+        margin-top: 30px;
+    }
+
+    .multifamily-hero-content h1 {
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    .multifamily-hero-content p {
+        max-width: 95%;
+        font-size: 0.9rem;
+    }
+
+    /*# multifamily-hero section end*/
+
+    /*# consumerreport section start*/
+    .consumer-reports {
+        margin: 0;
+        padding: 5rem 2rem;
+        padding-top: 5rem;
+        padding-bottom: 2rem;
+        background-color: var(--white);
+        font-family: Arial, sans-serif;
+        height: 450px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .consumer-reports-title {
+        font-size: 1.1rem;
+        margin-bottom: .9rem;
+    }
+
+    .contbtn {
+        padding: 0 2rem;
+        padding-top: .6rem;
+        padding-bottom: 1rem;
+        margin-bottom: 2rem;
+        align-self: normal;
+    }
+
+    .contbtn span {
+        font-size: 16px;
+        color: var(--black);
+    }
+
+    .consumer-reports-cards-container {
+        padding-right: 0;
+        margin: 0 -1.5rem;
+    }
+
+    .consumer-reports-card {
+        padding: 4rem 1rem;
+        margin-bottom: 3rem;
+        height: 120px;
+    }
+
+    .consumer-reports-card-content {
+        padding: 0px;
+        margin: 0;
+        margin-top: 0;
+    }
+
+    .consumer-reports-card h2 {
+        font-size: 1rem;
+        margin-bottom: -1rem;
+    }
+
+    .consumer-reports-card p {
+        font-size: .8rem;
+        line-height: 1.2;
+        max-width: 100%;
+    }
+
+    .consumer-reports-card-image {
+        border-radius: 15px;
+        width: 45%;
+        object-fit: cover;
+    }
+
+    /*# consumerreport section end*/
+
+    /*# why-chargebay section start*/
+
+    .why-chargebay-section {
+        padding: 4rem 2rem;
+    }
+
+    .why-chargebay-title {
+        font-size: 1.5rem;
+        margin-bottom: 40px;
+    }
+
+    .why-chargebay-cards {
+        gap: 30px;
+    }
+
+    .why-chargebay-card {
+        width: 450px;
+        min-height: 150px;
+    }
+
+    .why-chargebay-card-title {
+        font-size: 1.2rem;
+        max-width: 90%;
+    }
+
+    .why-chargebay-card-source {
+        font-size: .9rem;
+    }
+
+    /*# why-chargebay section end*/
+
+    /*# problem-section start*/
+    .problem-section {
+        margin: 0;
+        padding: 6rem 1rem;
+        padding-bottom: 4rem;
+    }
+
+    .problem-section-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+    }
+
+    .problem-section-text {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.2;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+    }
+
+    /*# problem-section end*/
+
+    /*# help-secton start*/
+    .help-section {
+        background-color: var(--dark-theme);
+        color: var(--white);
+        padding: 5rem 3rem;
+        border-bottom-left-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+
+    .help-section-container {
+        max-width: 90rem;
+        margin: 0 auto;
+    }
+
+    .help-section-title {
+        font-size: 2rem;
+        margin-bottom: -1.5rem;
+    }
+
+    .help-section-subtitle {
+        font-size: 1.2rem;
+        margin-bottom: 3rem;
+        color: var(--title-gray);
+    }
+
+    .help-section-flex {
+        display: grid;
+        gap: 2rem;
+    }
+
+    .help-section-flex-item {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .icon-container {
+        margin-left: 40%;
+    }
+
+    .icon {
+        width: 2rem;
+        height: 2rem;
+        color: #0c0d10;
+        animation: scaleinout 3s forwards infinite;
+    }
+
+    .help-section-flex-item-title {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: .5rem;
+    }
+
+    .help-section-section-text {
+        font-size: .8rem;
+        margin-top: 3rem;
+        color: var(--title-gray);
+    }
+
+    /*# help-secton end*/
+
+    /*# figureout section start*/
+
+    .figureout {
+        padding: 4rem 2rem;
+    }
+
+    .figureout h1 {
+        font-size: 1.8rem;
+    }
+
+    .figureout-content {
+        display: grid;
+        width: auto;
+        height: auto;
+    }
+
+    .figureout-content-image {
+        width: 330px;
+        height: 300px;
+    }
+
+    .figureout-content-image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .figureout-content-para {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        padding-top: 0px;
+        padding-left: 0;
+    }
+
+    .figureout-content-para p {
+        padding: 6px 16px;
+        width: 90%;
+        margin-bottom: 15px;
+        border: .5px solid var(--subtitle-gray);
+        border-radius: 29px;
+        font-size: 1rem;
+        color: var(--subtitle-gray);
+    }
+
+    .figureout-content-para button {
+        margin-top: 10px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    /*# figureout section end*/
+
+
+    /*# trust section start*/
+    .trust-section {
+        padding-top: 1rem;
+        line-height: 1.1;
+        margin: 0;
+    }
+
+    .trust-section h1 {
+        font-size: 1.5rem;
+        max-width: 100%;
+        padding: 0 3rem;
+        margin: 0;
+        margin-top: 1rem;
+    }
+
+    .trust-section-logos img {
+        margin: 0;
+        padding: 0;
+        width: 95%;
+        height: 65px;
+    }
+
+    /*# trust section end*/
+
+    /*# bussiness-model section start*/
+
+    .business-model-section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 20px;
+    }
+
+    .business-model-section h1 {
+        font-size: 1.8rem;
+        line-height: 0.5;
+    }
+
+    .business-model {
+        display: grid;
+        padding-top: 0px;
+    }
+
+    .business-model-content {
+        padding: 0;
+        margin: 0;
+    }
+
+    .business-model-image {
+        width: 95%;
+        height: 100%;
+    }
+
+    .business-model-image img {
+        height: 350px;
+    }
+
+    /*# bussiness-model section end*/
+
+    /*# doubts section start*/
+    .doubts {
+        background-color: #f7f7f7;
+        text-align: center;
+        padding: 2rem 2rem;
+        margin: 0rem 1.5rem;
+        border-radius: 22px;
+    }
+
+    .doubts h2 {
+        font-size: 1.6rem;
+        font-weight: 500;
+    }
+
+    .doubts button {
+        font-size: .8rem;
+    }
+
+    /*# doubts section end*/
+
+    /*# case-study section start*/
+
+    .case-study-content {
+        max-width: 100%;
+        padding-right: 0;
+    }
+
+    .case-study-image {
+        margin-top: 40px;
+    }
+
+    .case-study {
+        display: grid;
+        flex-direction: column;
+        padding: 20px;
+        padding-bottom: 0;
+    }
+
+    .case-study-content {
+        padding-bottom: 0;
+    }
+
+    .case-study-image {
+        border-radius: 9px;
+        padding-left: 0px;
+        width: 100%;
+        height: 300px;
+        margin-bottom: 150px;
+        object-fit: cover;
+    }
+
+    .case-study-image img {
+        width: 100%;
+        height: 100%;
+    }
+
+    /*# case-study section end*/
+}

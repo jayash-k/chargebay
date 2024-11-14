@@ -1,0 +1,72 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --dark-theme: #00060e;
+    --title-gray: #888;
+    --subtitle-gray: #7e7e7eb0;
+    --card-subtitle: #fbffffe3;
+    --highlight-green: #0cc301;
+    --highlight-blue: #0774f3;
+    --dark-transperant: #000000c2;
+}
+
+.underconstructionbody {
+    background-color: var(--dark-theme);
+    
+}
+
+.underconstruction {
+    display: flex;
+    background: var(--dark-transperant);
+    padding-bottom: 8rem;
+}
+
+.underconstruction h1 {
+    color: var(--white);
+    font-size: 3rem;
+    line-height: 1.1;
+    max-width: 50%;
+    padding: 8rem 5rem;
+    font-weight: bold;
+}
+
+.underconstruction h1 button {
+    margin-top: 35px;
+    width: 25%;
+}
+
+.underconstruction img {
+    padding-top: 7rem;
+    padding-bottom: 8rem;
+    padding-right: 12rem;
+    max-width: 50%;
+}
+
+@media (max-width: 768px) {
+
+    .underconstruction {
+        display: flex;
+        flex-direction: column-reverse;
+        padding: 2rem 1rem;
+        margin: 0;
+        padding-bottom: 100%;
+    }
+
+    .underconstruction h1 {
+        padding: 0;
+        font-size: 2.2rem;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .underconstruction h1 button {
+        width: 50%;
+    }
+
+    .underconstruction img {
+        max-width: 100%;
+        padding-top: 3rem;
+        padding-right: 0;
+        padding-bottom: 0;
+    }
+}

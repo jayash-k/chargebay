@@ -1,0 +1,310 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --dark-theme: #00060e;
+    --title-gray: #888;
+    --subtitle-gray: #7e7e7eb0;
+    --highlight-green: #0cc301;
+    --highlight-blue: #0774f3;
+}
+
+/*#partners-hero section start*/
+
+.partners-hero {
+    display: flex;
+    background-color: #000000c2;
+    padding-bottom: 8rem;
+}
+
+.partners-hero-content {
+    padding: 4rem 6rem;
+    max-width: 80%;
+}
+
+.partners-hero-content h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 5px;
+}
+
+.partners-hero-content p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--white);
+    max-width: 80%;
+    margin-bottom: 50px;
+}
+
+/*#partners-hero section end*/
+
+/*#accordion section start*/
+.accordion-container {
+    margin: 0 auto;
+    padding: 8rem 8rem;
+    font-family: 'Arial', sans-serif;
+}
+
+.accordion-container h2 {
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+.accordion-container p {
+    margin-bottom: 50px;
+    max-width: 70%;
+    font-size: 1.6rem;
+    color: var(--black);
+}
+
+.accordion-item-container {
+    background-color: #f4f4f4;
+    border-radius: 35px;
+    margin-bottom: 6rem;
+}
+
+.accordion-item {
+    background-color: #0000;
+    color: var(--black);
+    margin-bottom: 0px;
+    border-radius: 0px;
+    border-bottom: 1px solid #c0c0c077;
+    transition: background-color 1s ease , color .5s ease;
+}
+
+.accordion-item:hover {
+    background-color: var(--highlight-blue);
+    color: var(--white);
+}
+
+.first-accordion-item {
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+}
+
+.last-accordion-item {
+    border-bottom: none;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2.5rem 4rem;
+    font-size: 1.6rem;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.accordion-item-icon {
+    text-align: center;
+    border: 1px solid var(--black);
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    padding: 0rem 4rem;
+}
+
+.accordion-content p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    max-width: 75%;
+    line-height: 1.2;
+    margin-bottom: 1px;
+}
+
+.accordion-item.active:hover {
+    background-color: #0000;
+    color: var(--black);
+}
+
+.accordion-item:hover .accordion-item-icon {
+    border: 1px solid var(--white);
+}
+
+.accordion-item:hover.active .accordion-item-icon {
+    border: 1px solid var(--black);
+}
+
+.accordion-item.active .accordion-content {
+    max-height: 300px;
+}
+
+.accordion-container ul {
+    padding: 10px 20px;
+    text-align: left;
+    list-style: disc;
+}
+
+.accordion-container li {
+    color: var(--black);
+    font-weight: 500;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.accordion-container h3 {
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--title-gray);
+    line-height: 1.5;
+    margin: 0 4rem;
+    max-width: 80%;
+}
+
+/*#accordion section end*/
+
+/*#impact-section start*/
+.impact-section {
+    background-color: var(--dark-theme);
+    padding: 6rem 10rem;
+    padding-bottom: 8rem;
+}
+
+.impact-section h3 {
+    font-size: 2.5rem;
+    color: var(--white);
+    margin-bottom: 15px;
+}
+
+.impact-section p {
+    font-size: 1.5rem;
+    font-weight: 400;
+    max-width: 90%;
+    color: #ffffffc2;
+    margin-bottom: 50px;
+}
+
+/*#impact-section end*/
+
+@media (max-width: 786px) {
+    .partners-hero {
+        padding: 0;
+        padding-bottom: 4rem;
+    }
+
+    .partners-hero-content {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .partners-hero-content h1 {
+        max-width: 90%;
+        font-size: 1.8rem;
+        line-height: 1.4;
+    }
+
+    .partners-hero-content p {
+        font-size: 1.1rem;
+        max-width: 95%;
+        margin-bottom: 2rem;
+    }
+
+    .accordion-container {
+        margin: 0;
+        padding: 0 1.5rem;
+    }
+
+    .accordion-container h2 {
+        font-size: 1.76rem;
+    }
+
+    .accordion-container p {
+        font-size: 1.3rem;
+        max-width: 100%;
+    }
+
+    .accordion-item-container {
+        margin-bottom: 4rem;
+        border-radius: 19px;
+    }
+
+    .first-accordion-item {
+        border-top-left-radius: 19px;
+        border-top-right-radius: 19px;
+    }
+    
+    .last-accordion-item {
+        border-bottom: none;
+        border-bottom-left-radius: 19px;
+        border-bottom-right-radius: 19px;
+    }
+
+    .accordion-header {
+        font-size: 1rem;
+        padding: 1rem 2rem;
+        padding-right: 1rem;
+    }
+
+    .accordion-item-icon {
+        font-size: 10px;
+        text-align: center;
+        border: 1px solid var(--black);
+        padding-top: 3px;
+        width: 22px;
+        height: 20px;
+        border-radius: 50px;
+    }
+
+    .accordion-content {
+        padding: 0rem 2rem;
+    }
+
+    .accordion-content p {
+        font-size: .95rem;
+        max-width: 100%;
+    }
+
+    .accordion-container li {
+        color: var(--black);
+        font-weight: 500;
+        margin-bottom: 2px;
+        font-size: 14px;
+    }
+
+    .accordion-container h3 {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: var(--title-gray);
+        line-height: 1.5;
+        margin: 0;
+        margin-bottom: 5rem;
+        max-width: 100%;
+    }
+
+    .impact-section {
+        background-color: var(--dark-theme);
+        padding: 2rem 1.5rem;
+        padding-bottom: 4rem;
+    }
+
+    .impact-section h3 {
+        font-size: 1.8rem;
+        max-width: 80%;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+
+    .impact-section p {
+        font-size: 1.1rem;
+        font-weight: 400;
+        max-width: 100%;
+        color: #ffffffc2;
+        margin-bottom: 40px;
+    }
+
+    .doubts.getintouchdoubts{
+       margin: 8rem 1rem;
+    }
+
+}
