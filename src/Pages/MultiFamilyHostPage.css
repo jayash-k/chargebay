@@ -56,7 +56,7 @@
     padding: 5rem 0;
     background-color: var(--white);
     font-family: Arial, sans-serif;
-    height: 130vh;
+    height: 820px;
     display: flex;
     flex-direction: column;
 }
@@ -74,27 +74,19 @@
 }
 
 .contbtn {
-    padding: 0 2rem;
-    padding-top: 1rem;
-    padding-bottom: 2rem;
-    cursor: pointer;
-    background-color: #00000000;
-    border-radius: 50px;
-    margin-bottom: 4rem;
-    align-self: flex-start;
+    width: fit-content;
+    margin: 2rem 0;
     margin-left: 10rem;
     margin-right: 6rem;
-}
-
-.contbtn span {
-    color: var(--black);
+    line-height: 0;
+    padding: 1.5rem;
 }
 
 .consumer-reports-cards-container {
     flex-grow: 0;
     overflow-y: auto;
     scroll-behavior: smooth;
-    
+    scroll-snap-type: y mandatory;
     padding-left: 10rem;
     padding-right: 6rem;
     
@@ -115,6 +107,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 3rem;
     height: 380px;
+    scroll-snap-align: start;
     transition: opacity 0.3s ease;
 }
 
@@ -145,6 +138,7 @@
     border-radius: 15px;
     width: 45%;
     object-fit: cover;
+    margin-right: 1.5rem;
 }
 
 .consumer-reports-card.active {
@@ -290,16 +284,20 @@
 }
 
 .icon-container {
+    max-width: 3rem;
+    max-height: 3rem;
     background-color: var(--white);
     padding: 1rem;
     border-radius: 0.5rem;
     margin-bottom: 1.5rem;
     transition: all 0.8 ease;
+    justify-content: center;
 }
 
 .icon {
     width: 3rem;
     height: 3rem;
+    justify-content: center;
     color: #0c0d10;
 }
 
@@ -609,22 +607,18 @@
 
     .consumer-reports-title {
         font-size: 1.5rem;
+        margin: 0 -1rem;
         margin-bottom: .9rem;
         padding: 0;
     }
 
     .contbtn {
-        padding: 0 2rem;
-        padding-top: .6rem;
-        padding-bottom: 1rem;
-        margin: 0;
+        width: fit-content;
+        line-height: 0;
+        padding: 1rem;
+        margin: 0 -1rem;
         margin-bottom: 2rem;
         align-self: normal;
-    }
-
-    .contbtn span {
-        font-size: 16px;
-        color: var(--black);
     }
 
     .consumer-reports-cards-container {
@@ -642,6 +636,7 @@
     }
 
     .consumer-reports-card-content {
+        flex: .75;
         padding: 0px;
         margin: 0;
     }

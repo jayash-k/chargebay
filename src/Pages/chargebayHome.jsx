@@ -16,7 +16,7 @@ import chargerimg from "../Images/charger.png"
 
 import reducecost from "../Images/cost.png"
 import efficient from "../Images/efficient.png"
-import supports from "../Images/support.png"
+import supports from "../Images/img3.png"
 import powerful from "../Images/powerful.png"
 
 import multifamily from "../Images/multifamily.png"
@@ -109,21 +109,25 @@ const ChargeBayHome = () => {
       image: reducecost,
       alt: 'EV Charging Station',
       specialImgCost: 'specialImgCost',
+      linkto: '/bussiness-model'
     },
     efficient: {
       text: "Our efficient hardware solutions optimize energy distribution, ensuring maximum performance with minimal infrastructure impact. ChargeBay's smart technology adapts to your specific needs, providing a cost-effective and scalable charging solution.",
       image: efficient,
       alt: 'Graph showing cost reduction and income increase',
+      linkto : '/products'
     },
     supports: {
       text: "ChargeBay offers comprehensive support to ensure smooth operation of your EV charging infrastructure. Our team of experts is available 24/7 to address any concerns and provide guidance on optimizing your charging network.",
       image: supports,
       alt: 'Customer support representative',
+      linkto : '/products'
     },
     software: {
       text: "Our powerful software suite provides real-time monitoring, analytics, and control of your EV charging network. From load balancing to user management, ChargeBay's software ensures efficient operation and maximizes your return on investment.",
       image: powerful,
       alt: 'Laptop with software interface',
+      linkto : '/products'
     },
   };
 
@@ -179,7 +183,7 @@ const ChargeBayHome = () => {
       />
       <div className="card-content">
         <h3 className="card-title">{title}</h3>
-        <Link to={linkto}><button className="card-button">{buttonText}</button></Link>
+        <a href={linkto}><button className="card-button">{buttonText}</button></a>
       </div>
     </div>
   );
@@ -265,6 +269,13 @@ const ChargeBayHome = () => {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
+
+    if (location.hash === '#ourPartners') {
+      const element = document.getElementById('ourPartners');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
   }, [location]);
 
   return (
@@ -280,7 +291,7 @@ const ChargeBayHome = () => {
               <div className="hero-content">
                 <h1 >America's most <span className="highlight-green">affordable</span> EV charging Ecosystem</h1>
                 <p>For business and hosts looking to expand without hassle</p>
-                <Link to="/page2"> <button className="learn-more transperant" ><span>Learn More</span></button></Link>
+                <Link to="/host-multifamily"> <button className="learn-more transperant" ><span>Learn More</span></button></Link>
               </div>
             </AnimatedSection>
             <div className="hero-image">
@@ -316,7 +327,7 @@ const ChargeBayHome = () => {
         <section className="cost-benefit" >
           <div className="home" id='Scrollcost'>
             <h1 className="title">
-              ChargeBay <span className="green">Decreases</span> Turnaround Costs while <span className="blue">Increase</span> Net operating Income
+              ChargeBay <span className="green">Decreases</span> Turn around Costs while <span className="blue">Increasing</span> Net Operating Income
             </h1>
             <div className="sections">
               {sections.map((section) => (
@@ -333,7 +344,7 @@ const ChargeBayHome = () => {
               <div className={`content ${slideDirection}`}>
                 <div className="text">
                   <p>{content[activeSection].text}</p>
-                  <Link to={'/underconstruction'}><button className="learn-more transperant"><span>Learn More</span></button></Link>
+                  <a href={content[activeSection].linkto}><button className="learn-more transperant"><span>Learn More</span></button></a>
                 </div>
                 <div className="image-container">
                   <img src={content[activeSection].image} alt={content[activeSection].alt} className={content[activeSection].specialImgCost} />
@@ -429,7 +440,7 @@ const ChargeBayHome = () => {
                   title="Providing efficient EV charging service, without breaking the bank."
                   description=""
                   buttonText="Learn More"
-                  linkto='/underconstruction'
+                  linkto='/contact-us'
                   imageSrc={lookingfor2}
                 />
               </div>
@@ -446,14 +457,14 @@ const ChargeBayHome = () => {
         </section> */}
 
         <section className="app-download">
-          <h2>Find out how seamless EV charging can be. Download the ChargeBay app</h2>
+          <h2>Find out how seamless EV charging can be.<br/> Download the ChargeBay app</h2>
           <div className="app-buttons">
             <img src={playstore} alt="Get it on Google Play" />
             <img src={appstore} alt="Download on the App Store" />
           </div>
         </section>
 
-        <section className="featured">
+        <section className="featured" id='ourPartners'>
           <h2>Featured in</h2>
           <div className="featured-logos">
             <img src={featured} alt="Featured" draggable='false' />
@@ -465,7 +476,7 @@ const ChargeBayHome = () => {
             <div className='revolution'>
               <h1>Electric <span className='highlight-blue'>Revolution</span>  in the US in numbers :</h1>
               <h3>There is a gap in the no of EV and available chargers, <span className='highlight-blue'>ChargeBay</span> Helps to fill this gap</h3>
-              <Link to={'/underconstruction'}><button className='learn-more-white transperant'><span>Learn More</span></button></Link>
+              <a href='/host-commercial'><button className='learn-more-white transperant'><span>Learn More</span></button></a>
             </div>
             <img src={revolution} alt="revolution image" />
           </AnimatedSection>
@@ -519,7 +530,7 @@ const ChargeBayHome = () => {
 
         <section className="community">
           <h1>Want your community/ service to host?</h1>
-          <Link to={'/contact-us'}><button className='learn-more transperant'><span>Contact Now</span></button></Link>
+          <a href='/contact-us'><button className='learn-more transperant'><span>Contact Now</span></button></a>
         </section>
 
         <AnimatedSection animation='slideIn' direction='up'>

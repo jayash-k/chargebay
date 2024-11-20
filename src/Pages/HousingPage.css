@@ -58,7 +58,7 @@
     padding-right: 6rem;
     background-color: var(--white);
     font-family: Arial, sans-serif;
-    height: 130vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
 }

@@ -56,14 +56,14 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                 <a className="nav-link">Our Solution <ChevronDown className="dropdown-arrow"></ChevronDown></a>
               </li>
               <li className="nav-item">
-                <a href='/underconstruction' className="nav-link">Our Partners</a>
+                <a href='/reseller' className="nav-link">Our Partners</a>
               </li>
               <li className="nav-item">
-                <a href='/underconstruction' className="nav-link">The Company</a>
+                <a href='/bussiness-model' className="nav-link">The Company</a>
               </li>
               <div className="cta-buttons">
 
-                <Link to={"/underconstruction"}><button href="#HostStation" className="host-station" ><span>Host a Station</span></button></Link>
+                <Link to={"/contact-us"}><button className="host-station" ><span>Host a Station</span></button></Link>
                 <button onClick={toggleForm} className="learn-more contacts">
                   <span>Contact</span>
                 </button>
@@ -94,7 +94,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                   <li>
                     <h3>RESOURCES</h3>
                     <li><a href="/Q&A#driversQA">Driver FAQs</a></li>
-                    <li><a onClick={toggleForm}>Get Help</a></li>
+                    <li><a href='/contact-us'>Get Help</a></li>
                   </li>
                 </ul>
               </li>
@@ -108,7 +108,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                   </li>
                   <li>
                     <h3>RESOURCES</h3>
-                    <li><a href="/underconstruction">Host Login</a></li>
+                    <li><a href="/#app-demo">Host Login</a></li>
                     <li><a href="/bussiness-model">Charging Bussiness</a></li>
                     <li><a href="/host-commercial">Commercial Incentive Lookup</a></li>
                     <li><a href="/contact-us">Support & Sales </a></li>
@@ -124,16 +124,16 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                     <li><a href="/products">All Products</a></li>
                   </li>
                   <li>
-                    <h3>Resseller</h3>
-                    <li><a href="/reseller">Become a Resseller</a></li>
+                    <h3>RESELLER</h3>
+                    <li><a href="/reseller">Become a Reseller</a></li>
                   </li>
                 </ul>
               </li>
               <li className="nav-item">
-                <a href='/underconstruction' className="nav-link">Our Partners</a>
+                <a href='/reseller' className="nav-link">Our Partners</a>
               </li>
               <li className="nav-item">
-                <a href='/underconstruction' className="nav-link">The Company</a>
+                <a href='/bussiness-model' className="nav-link">The Company</a>
               </li>
               <h5>Are you host?</h5>
               <h3>Log in &#x2192;</h3>

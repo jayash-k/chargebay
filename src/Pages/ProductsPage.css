@@ -228,7 +228,7 @@
 .chargebay-ecosystem-subtitle {
     color: #fafafada;
     font-size: 17px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 
 .chargebay-ecosystem-text-content p {
@@ -369,6 +369,7 @@
 
     .why-chargebay-ecosystem img {
         margin: -1rem;
+        padding: 0 auto;
     }
 
     .why-chargebay-ecosystem img.firstImg {

@@ -134,7 +134,7 @@ function HousingPage() {
                         {!isMobileView ? <br /> : ' '}
                         According to <span className="highlight">Consumer reports</span>
                     </h1>
-                    <button className="learn-more contbtn"><span>Contact Our Experts</span></button>
+                    <button className="learn-more-white contbtn"><span>Contact Our Experts</span></button>
                     <div className="consumer-reports-cards-container" ref={containerRef}>
                         {cardData.map((card, index) => (
                             <div

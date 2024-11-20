@@ -13,37 +13,11 @@ function MegaMenus({ activeNavItem, setIsNavItemHover, toggleForm }) {
 
   const handleMouseEnter = () => {
     setIsNavItemHover(activeNavItem);
-    navsitm.style.marginRight = '16px';
-    navsitm.style.marginLeft = '0';
-    navsitm.style.padding = '5px 8px';
-    navsitm.style.borderRadius = '29px';
-    navsitm.style.backgroundColor = '#7e7e7e49';
   };
 
   const handleMouseLeave = () => {
     setIsNavItemHover(null);
-    navsitm.style.backgroundColor = "#0000";
   };
-
-  for (let i = 0; i < navItems.length; i++) {
-    navItems[i].addEventListener('mouseenter', function () {
-      // Apply styles on hover
-      navItems[i].style.marginRight = '16px';
-      navItems[i].style.marginLeft = '0';
-      navItems[i].style.padding = '5px 8px';
-      navItems[i].style.borderRadius = '29px';
-      navItems[i].style.backgroundColor = '#7e7e7e49';
-    });
-
-    navItems[i].addEventListener('mouseleave', function () {
-      // Remove the styles when not hovering
-      navItems[i].style.marginRight = '';
-      navItems[i].style.marginLeft = '';
-      navItems[i].style.padding = '';
-      navItems[i].style.borderRadius = '';
-      navItems[i].style.backgroundColor = '';
-    });
-  }
 
   switch (activeNavItem) {
     case 'drivers':
@@ -67,7 +41,7 @@ function MegaMenus({ activeNavItem, setIsNavItemHover, toggleForm }) {
                   <h3>RESOURCES</h3>
                   <ul>
                     <li><a href="/Q&A#driversQA">Driver FAQs</a></li>
-                    <li><a onClick={toggleForm}>Get Help</a></li>
+                    <li><a href='/contact-us'>Get Help</a></li>
                   </ul>
                 </div>
               </div>
@@ -95,8 +69,8 @@ function MegaMenus({ activeNavItem, setIsNavItemHover, toggleForm }) {
                 <div className="mega-menu-column">
                   <h3>RESOURCES</h3>
                   <ul>
-                    <li><a href="/underconstruction">Host Login</a></li>
-                    <li><a href="/bussiness-model">Charging Bussiness</a></li>
+                    <li><a href="#"><Link to="/#app-demo">Host Login</Link></a></li>
+                    <li><a href="/bussiness-model">Charging Business</a></li>
                     <li><a href="/host-commercial">Commercial Incentive Lookup</a></li>
                     <li><a href="/contact-us">Support & Sales </a></li>
                     <li><a href="/Q&A#hostQA">Host FAQs</a></li>
@@ -125,9 +99,9 @@ function MegaMenus({ activeNavItem, setIsNavItemHover, toggleForm }) {
                   </ul>
                 </div>
                 <div className="mega-menu-column">
-                  <h3>Resseller</h3>
+                  <h3>RESELLER</h3>
                   <ul>
-                    <li><a href="/reseller">Become a Resseller</a></li>
+                    <li><a href="/reseller">Become a Reseller</a></li>
                     <li><a href="#"></a></li>
                   </ul>
                 </div>
