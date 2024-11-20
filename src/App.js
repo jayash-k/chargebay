@@ -13,6 +13,7 @@ import BussinessModelPage from './Pages/BussinessModelPage';
 import CommercialHostPage from './Pages/CommercialHostPage';
 import QAPage from './Pages/QAPage';
 import ProductsPage from './Pages/ProductsPage';
+import PrivacyPolicy from './Pages/PrivacyPolicyPage';
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path='/host-commercial' element={<CommercialHostPage/>}/>
         <Route path='/Q&A' element={<QAPage/>}/>
         <Route path='/products' element={<ProductsPage/>}/>
+
+        <Route path='/privacy-policy' element={<PrivacyPolicy/>}></Route>
       </Routes>
     </Router>
   );
