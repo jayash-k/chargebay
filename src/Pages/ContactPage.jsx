@@ -70,7 +70,7 @@ const GetInTouch = () => {
                                 </div>
                                 <div className="reach-us-info-block">
                                     <h3>Call Us</h3>
-                                    <p>9876543210</p>
+                                    <p>+1 (757)-524-2743</p>
                                 </div>
                                 <div className="reach-us-info-block">
                                     <h3>Office</h3>

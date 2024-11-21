@@ -164,33 +164,33 @@ function QAPage() {
 
   }, [location]);
 
-  const scrollContainerRef = useRef(null);
+  // const scrollContainerRef = useRef(null);
 
-  useEffect(() => {
-    const container = scrollContainerRef.current;
-    const items = Array.from(container.children);
-    const totalHeight = items[0].offsetHeight * items.length;
+  // useEffect(() => {
+  //   const container = scrollContainerRef.current;
+  //   const items = Array.from(container.children);
+  //   const totalHeight = items[0].offsetHeight * items.length;
 
-    // Duplicate items to create an infinite loop effect
-    container.innerHTML += container.innerHTML;
+  //   // Duplicate items to create an infinite loop effect
+  //   container.innerHTML += container.innerHTML;
 
-    let currentScroll = 0;
+  //   let currentScroll = 0;
 
-    const scroll = () => {
-      currentScroll += 1; // Adjust speed by changing this value
-      container.style.transform = `translateY(-${currentScroll}px)`;
+  //   const scroll = () => {
+  //     currentScroll += 1; // Adjust speed by changing this value
+  //     container.style.transform = `translateY(-${currentScroll}px)`;
 
-      // Reset when scrolled past original content height
-      if (currentScroll >= totalHeight) {
-        currentScroll = 0;
-        container.style.transform = "translateY(0)";
-      }
-    };
+  //     // Reset when scrolled past original content height
+  //     if (currentScroll >= totalHeight) {
+  //       currentScroll = 0;
+  //       container.style.transform = "translateY(0)";
+  //     }
+  //   };
 
-    const intervalId = setInterval(scroll, 10); // Adjust interval for smoother scroll
+  //   const intervalId = setInterval(scroll, 10); // Adjust interval for smoother scroll
 
-    return () => clearInterval(intervalId); // Cleanup on unmount
-  }, []);
+  //   return () => clearInterval(intervalId); // Cleanup on unmount
+  // }, []);
 
   return (
     <>
@@ -297,7 +297,7 @@ function QAPage() {
             ))}
           </div>
 
-          <section className="FAQ-detailes">
+          {/* <section className="FAQ-detailes">
       <div className="FAQ-detailes-Question" ref={scrollContainerRef}>
         <div className="question-item">
           Have you ever shown up to a charging station, and it's either full, broken, or in the middle of nowhere?
@@ -313,7 +313,7 @@ function QAPage() {
         ChargeBay is a one-stop solution that allows you to find and reserve chargers in advance, so that you're never left
         in the dark about your charger.
       </h2>
-    </section>
+    </section> */}
 
         </section>
 

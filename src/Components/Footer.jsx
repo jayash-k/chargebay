@@ -23,25 +23,34 @@ function Footer() {
                         <div className="footer-logo">
                             <img src={logo} alt="ChargeBay Logo" className="logo-img" />
                         </div>
-                        <span className="address">3702 Spectrum Blvd. Ste. 165<br />Tampa, FL 33612, USA</span>
-                        <span className="email"><br />Email:
+                        <span className="address" >3702 Spectrum Blvd. Ste. 165<br />Tampa, FL 33612, USA</span>
+                        <span className="email" style={{marginTop : '.8rem'}}><br />
+                        <div style={{marginRight: '.5rem'}}>Contact :</div>
+                            <div >
+                                <a href='/contact-us' style={{textDecoration : 'none'}}>+1 (757)-524-2743</a>
+                            </div>
+                        </span>
+                        <span className="email"><br />
+                        <div style={{marginRight: '1.5rem'}}>Email:</div>
+                            <div >
                                 <li><a href={`mailto:${email1}`} onClick={handleEmailClick}>{email1}</a></li>
                                 <li><a href={`mailto:${email2}`} onClick={handleEmailClick}>{email2}</a></li>
+                            </div>
                         </span>
                     </div>
                     <div className="footer-middle">
                         <div className="footer-links">
                             <ul>
-                                <li><a href="#">Drivers</a></li>
-                                <li><a href="#">Hosts</a></li>
-                                <li><a href="#">The Company</a></li>
+                                <li><a href="/Q&A#driversQA">Drivers</a></li>
+                                <li><a href="/Q&A#hostQA">Hosts</a></li>
+                                <li><a href="/reseller">The Company</a></li>
                             </ul>
                         </div>
                         <div className="footer-links">
                             <ul>
-                                <li><a href="#">Host a Station</a></li>
-                                <li><a href="#">Our Solution</a></li>
-                                <li><a href="#">Our Partners</a></li>
+                                <li><a href="/reseller">Host a Station</a></li>
+                                <li><a href="/products">Our Solution</a></li>
+                                <li><a href="/reseller">Our Partners</a></li>
                             </ul>
                         </div>
                     </div>

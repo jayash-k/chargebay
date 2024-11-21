@@ -33,7 +33,7 @@
 .address{
     font-size: 14px;
     line-height: 1.5;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
     color: #999999;
 }
 
@@ -41,6 +41,7 @@
     font-size: 14px;
     color: white;
     line-height: 1.5;
+    display: flex;
 }
 
 .email a {
