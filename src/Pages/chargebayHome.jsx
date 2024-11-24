@@ -108,7 +108,6 @@ const ChargeBayHome = () => {
       text: "We'll maximize the number of EV chargers you can safely install without triggering substantial infrastructure costs. Our Intelligent Load Manager, ChargeBay continuously manages the electricity being consumed by the chargers based on the capacity that is available at any given moment.",
       image: reducecost,
       alt: 'EV Charging Station',
-      specialImgCost: 'specialImgCost',
       linkto: '/bussiness-model'
     },
     efficient: {
@@ -157,19 +156,22 @@ const ChargeBayHome = () => {
       id: 'multi-family',
       title: 'Multi-family',
       content: 'Hosting EV charging stations in multifamily proprities offers a valuable ammenity that caters to the growing demand for electric vehicle support.',
-      image: multifamily
+      image: multifamily,
+      linkto : '/host-multifamily'
     },
     {
       id: 'workplace',
       title: 'Workplace',
       content: 'Hosting EV charging stations in multifamily proprities offers a valuable ammenity that caters to the growing demand for electric vehicle support.',
-      image: workplace
+      image: workplace,
+      linkto : '/host-commercial'
     },
     {
       id: 'public-retail',
       title: 'Public & Retail',
       content: 'Hosting EV charging stations in multifamily proprities offers a valuable ammenity that caters to the growing demand for electric vehicle support.',
-      image: retail
+      image: retail,
+      linkto : '/host-commercial'
     }
   ];
 
@@ -313,7 +315,7 @@ const ChargeBayHome = () => {
         <section className="streamlinesection">
           <div className='streamline'>
             <p>Designed to streamline the complexities of multi-vehicle EV charging stations, ChargeBay provides <span className="highlight-black">seamless charging & power management</span> for any commercial development, along with easy booking and scheduling convenience for customers.</p>
-            <Link to={'/underconstruction'}><button className="learn-more-white transperant"><span>Learn More</span></button></Link>
+            <a href="/host-commercial"><button className="learn-more-white transperant"><span>Learn More</span></button></a>
           </div>
 
           <div className='chargerimagediv'>
@@ -327,7 +329,7 @@ const ChargeBayHome = () => {
         <section className="cost-benefit" >
           <div className="home" id='Scrollcost'>
             <h1 className="title">
-              ChargeBay <span className="green">Decreases</span> Turn around Costs while <span className="blue">Increasing</span> Net Operating Income
+              ChargeBay <span className="green">Decreases</span> Turn Around Costs<br/> While <span className="blue">Increasing</span> Net Operating Income
             </h1>
             <div className="sections">
               {sections.map((section) => (
@@ -347,7 +349,7 @@ const ChargeBayHome = () => {
                   <a href={content[activeSection].linkto}><button className="learn-more transperant"><span>Learn More</span></button></a>
                 </div>
                 <div className="image-container">
-                  <img src={content[activeSection].image} alt={content[activeSection].alt} className={content[activeSection].specialImgCost} />
+                  <img src={content[activeSection].image} alt={content[activeSection].alt} />
                 </div>
               </div>
             </div>
@@ -378,7 +380,7 @@ const ChargeBayHome = () => {
                     <div className="overlay">
                       <h2>{tab.title}</h2>
                       <p>{tab.content}</p>
-                      <Link to={'/underconstruction'}><button className="learn-more transperant"><span>Learn More</span></button></Link>
+                      <a href={tab.linkto}><button className="learn-more transperant"><span>Learn More</span></button></a>
                     </div>
                   </div>
                 ))}

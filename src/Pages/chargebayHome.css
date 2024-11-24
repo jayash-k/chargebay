@@ -27,8 +27,13 @@ p {
     cursor: default;
 }
 
+a {
+cursor: pointer;
+}
+
 Link {
     text-decoration: none;
+    cursor: pointer;
 }
 
 
@@ -563,10 +568,6 @@ label {
     width: 95%;
     height: 50px;
     padding-right: 10px;
-}
-
-.form-group textarea {
-    resize: vertical;
 }
 
 .submit-button {

@@ -83,31 +83,6 @@ function HousingPage() {
         }
     ];
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (containerRef.current) {
-                const { scrollTop, scrollHeight, clientHeight } = containerRef.current;
-                const scrollPercentage = (scrollTop / (scrollHeight - clientHeight)) * 100;
-                const newActiveCardIndex = Math.min(
-                    Math.floor(scrollPercentage / (100 / cardData.length)),
-                    cardData.length - 1
-                );
-                setActiveCardIndex(newActiveCardIndex);
-            }
-        };
-
-        const container = containerRef.current;
-        if (container) {
-            container.addEventListener('scroll', handleScroll);
-        }
-
-        return () => {
-            if (container) {
-                container.removeEventListener('scroll', handleScroll);
-            }
-        };
-    }, [cardData.length]);
-
     return (
         <>
             <main>
@@ -132,10 +107,10 @@ function HousingPage() {
                     <h1 className="consumer-reports-title">
                         75% EV drivers prefer homes with EV chargers,
                         {!isMobileView ? <br /> : ' '}
-                        According to <span className="highlight">Consumer reports</span>
+                        According to <a href='https://advocacy.consumerreports.org/wp-content/uploads/2020/12/CR-National-EV-Survey-December-2020-2.pdf' className="highlight">Consumer reports</a>
                     </h1>
-                    <button className="learn-more-white contbtn"><span>Contact Our Experts</span></button>
-                    <div className="consumer-reports-cards-container" ref={containerRef}>
+                    <a href='/contact-us'><button className="learn-more-white contbtn"><span>Contact Our Experts</span></button></a>
+                    <div className="consumer-reports-cards-container">
                         {cardData.map((card, index) => (
                             <div
                                 key={index}
@@ -158,15 +133,15 @@ function HousingPage() {
                     <div className="why-chargebay-cards">
                         <div className="why-chargebay-card card1">
                             <h3 className="why-chargebay-card-title">50% of all new cars will be EV by 2030</h3>
-                            <p className="why-chargebay-card-source">Source: <a href="#" className="why-chargebay-link">White House</a></p>
+                            <p className="why-chargebay-card-source">Source: <a href="https://www.whitehouse.gov/briefing-room/statements-releases/2023/04/17/fact-sheet-biden-harris-administration-announces-new-private-and-public-sector-investments-for-affordable-electric-vehicles/" className="why-chargebay-link">White House</a></p>
                         </div>
                         <div className="why-chargebay-card card1">
                             <h3 className="why-chargebay-card-title">35% of all EV chargers will be at Multi-family developments</h3>
-                            <p className="why-chargebay-card-source">Source: <a href="#" className="why-chargebay-link">PWC</a></p>
+                            <p className="why-chargebay-card-source">Source: <a href="https://www.pwc.com/us/en/industries/industrial-products/library/electric-vehicle-charging-market-growth.html" className="why-chargebay-link">PWC</a></p>
                         </div>
                         <div className="why-chargebay-card card1">
                             <h3 className="why-chargebay-card-title">58% of Renters are willing to pay more to live at a location with EV charging amenities</h3>
-                            <p className="why-chargebay-card-source">Source: <a href="#" className="why-chargebay-link">Multi-Family Executive</a></p>
+                            <p className="why-chargebay-card-source">Source: <a href="https://www.multifamilyexecutive.com/property-management/apartment-trends/stat-of-the-week-ev-charging-stations_o" className="why-chargebay-link">Multi-Family Executive</a></p>
                         </div>
                         <div className="why-chargebay-card card1">
                             <h3 className="why-chargebay-card-title">65% of EV chargers are always occupied at prime times</h3>
@@ -280,7 +255,7 @@ function HousingPage() {
                 <AnimatedSection animation='flyIn' direction='down'>
                     <section className="asked-que multifamily">
                         <h2>Frequently Asked Questions?</h2>
-                        <button className="learn-more-white transperant"><span>All Questions</span></button>
+                        <a href="/Q&A"><button className="learn-more-white transperant"><span>All Questions</span></button></a>
                     </section>
                 </AnimatedSection>
 

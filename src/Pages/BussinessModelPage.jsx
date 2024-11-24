@@ -204,7 +204,7 @@ function BussinessModelPage() {
                 <AnimatedSection animation='flyIn' direction='down' >
                     <section className="doubts bussinessmodel">
                         <h2>Got more doubts?</h2>
-                        <button className="learn-more-white transperant"><span>All Questions</span></button>
+                        <a href="/Q&A"><button className="learn-more-white transperant"><span>All Questions</span></button></a>
                     </section>
                 </AnimatedSection>
                 <footer>

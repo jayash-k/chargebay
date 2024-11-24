@@ -14,6 +14,7 @@ import CommercialHostPage from './Pages/CommercialHostPage';
 import QAPage from './Pages/QAPage';
 import ProductsPage from './Pages/ProductsPage';
 import PrivacyPolicy from './Pages/PrivacyPolicyPage';
+import TermsConditions from './Pages/TermsConditionsPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/underconstruction' element={<UnderConstructionPage />} />
+        <Route path='*' element={<UnderConstructionPage/>}/>  
         <Route path='/home' element={<HomePage />} />
         <Route path='/host-multifamily' element={<MultiFamilyHostPage />} />
         <Route path='/drivers' element={<DriversPage />} />
@@ -32,6 +34,7 @@ function App() {
         <Route path='/products' element={<ProductsPage/>}/>
 
         <Route path='/privacy-policy' element={<PrivacyPolicy/>}></Route>
+        <Route path='/T&C' element={<TermsConditions/>}></Route>
       </Routes>
     </Router>
   );

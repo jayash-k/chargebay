@@ -102,7 +102,7 @@ const Partners = () => {
                             <div className="partners-hero-content">
                                 <h1>Become a ChargeBay Partner for {isMobileView ? ' ' : <br />}Developing Superior <span className='highlight-green'>One-Stop</span> EV Charging Ecosystems</h1>
                                 <p>With ChargeBay's EV charging solution, you can seamlessly provide an exceptional charging experience to your customers, allowing you to concentrate on your core business and leave the charging worries to us.</p>
-                                <button className='learn-more transperant'><span>Contact Now</span></button>
+                                <a href="/contact-us"><button className='learn-more transperant'><span>Contact Now</span></button></a>
                             </div>
                         </AnimatedSection>
                     </section>
@@ -153,7 +153,7 @@ const Partners = () => {
                         <button className="learn-more-white transperant"><span>All Questions</span></button>
                     </section>
                 </AnimatedSection>
-                
+
                 <footer>
                     <Footer />
                 </footer>
@@ -166,7 +166,7 @@ const Partners = () => {
                     />
                 )}
 
-{isOpen && (
+                {isOpen && (
                     <div className="contact-form-overlay">
                         <div
                             className={`contact-form ${closing ? "slide-out" : "slide-in"}`}

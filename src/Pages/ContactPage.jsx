@@ -40,6 +40,50 @@ const GetInTouch = () => {
             setClosing(false);
         }
     };
+
+    const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
+        company: '',
+        phone: '',
+        email: '',
+        description: '',
+        agreeToPrivacy: false,
+    });
+
+    const [isSubmitting, setIsSubmitting] = useState(false); // Track submission state
+
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: type === 'checkbox' ? checked : value,
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const { firstName, lastName, company, phone, email, description, agreeToPrivacy } = formData;
+
+        if (!agreeToPrivacy) {
+            alert('You must agree to the privacy policy.');
+            return;
+        }
+
+        setIsSubmitting(true); // Show the "Wait a moment" message
+
+        // Create mailto link
+        const mailtoLink = `mailto:operations@chargebay.app?subject=Contact Form Submission&body=First Name: ${firstName}%0D%0ALast Name: ${lastName}%0D%0ACompany: ${company}%0D%0APhone: ${phone}%0D%0AEmail: ${email}%0D%0ADescription: ${description}`;
+
+        // Simulate a delay for better UX
+        setTimeout(() => {
+            setIsSubmitting(false); // Remove the "Wait a moment" message
+            window.location.href = mailtoLink; // Open the email client
+        }, 1000); // Adjust delay as needed
+    };
+
+
     return (
         <>
             <main>
@@ -66,45 +110,92 @@ const GetInTouch = () => {
                             <div className="reach-us-contact-info">
                                 <div className="reach-us-info-block">
                                     <h3>Email Us</h3>
-                                    <p>operations@chargebay.app</p>
+                                    <a style={{ textDecoration: 'none', cursor: 'pointer' }} href="mailto:operations@chargebay.app"><p>operations@chargebay.app</p></a>
                                 </div>
                                 <div className="reach-us-info-block">
                                     <h3>Call Us</h3>
-                                    <p>+1 (757)-524-2743</p>
+                                    <a href="tel:+17575242743" style={{textDecoration : 'none'}}><p>+1 (757)-524-2743</p></a>
                                 </div>
                                 <div className="reach-us-info-block">
                                     <h3>Office</h3>
                                     <p>3702 Spectrum Blvd. Ste. 165 <br /> Tampa, FL 33612, USA</p>
                                 </div>
                             </div>
-                            <form className="reach-us-contact-form">
+                            <form className="reach-us-contact-form" onSubmit={handleSubmit}>
                                 <div className="reach-us-form-row">
-                                    <input type="text" placeholder="Full Name" />
-                                    <input type="email" placeholder="Email" />
+                                    <input
+                                        type="text"
+                                        placeholder="First Name"
+                                        name="firstName"
+                                        value={formData.firstName}
+                                        onChange={handleChange}
+                                    />
+                                    <input
+                                        type="text"
+                                        placeholder="Last Name"
+                                        name="lastName"
+                                        value={formData.lastName}
+                                        onChange={handleChange}
+                                    />
                                 </div>
                                 <div className="reach-us-form-row">
-                                    <input type="tel" placeholder="Phone No." />
-                                    <select defaultValue="">
-                                        <option value="" disabled>Type of inquiry</option>
-                                        <option value="general">Type 1</option>
-                                        <option value="support">Type 2</option>
-                                        <option value="sales">Type 3</option>
-                                    </select>
+                                    <input
+                                        type="text"
+                                        placeholder="Company"
+                                        name="company"
+                                        value={formData.company}
+                                        onChange={handleChange}
+                                    />
+                                    <input
+                                        type="tel"
+                                        placeholder="Phone"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleChange}
+                                    />
                                 </div>
-                                <textarea placeholder="Please provide all pertinent details about your inquiry"></textarea>
-                                <button><span>Send Message</span></button>
+                                <div className="reach-us-form-row" id='emailRow'>
+                                    <input
+                                        type="email"
+                                        placeholder="Email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
+                                        required
+                                    />
+                                </div>
+                                <textarea
+                                    placeholder="Description"
+                                    name="description"
+                                    value={formData.description}
+                                    onChange={handleChange}
+                                    required
+                                />
+                                <div style={{ display: 'flex' }}>
+                                    <input
+                                        style={{ width: '50px', margin: '0' }}
+                                        type="checkbox"
+                                        name="agreeToPrivacy"
+                                        checked={formData.agreeToPrivacy}
+                                        onChange={handleChange}
+                                    />
+                                    <label>I agree to the Privacy Policy</label>
+                                </div>
+                                <button type="submit" disabled={isSubmitting}>
+                                    <span>{isSubmitting ? 'Wait a moment...' : 'Send Message'}</span>
+                                </button>
                             </form>
                         </div>
                     </div>
-                </section>
+                </section >
 
                 <AnimatedSection animation='flyIn' direction='down'>
                     <section className="doubts getintouchdoubts">
                         <h2>Got more doubts?</h2>
-                        <button className="learn-more-white"><span>All Questions</span></button>
+                        <a href="/Q&A"><button className="learn-more-white transperant"><span>All Questions</span></button></a>
                     </section>
                 </AnimatedSection>
-                
+
                 <footer>
                     <Footer />
                 </footer>
@@ -115,7 +206,8 @@ const GetInTouch = () => {
                         setIsNavItemHover={setActiveNavItem}
                         toggleForm={toggleForm}
                     />
-                )}
+                )
+                }
                 {isOpen && (
                     <div className="contact-form-overlay">
                         <div
@@ -157,8 +249,9 @@ const GetInTouch = () => {
                             </form>
                         </div>
                     </div>
-                )}
-            </main>
+                )
+                }
+            </main >
         </>
     )
 }

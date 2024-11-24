@@ -73,7 +73,7 @@ function ProductsPage() {
             <div className="commercial-hero-content productspage">
               <h1>Simplifying EV Charging With a <span className='highlight-blue'> One-Stop</span> Ecosystem</h1>
               <p>Elevate your bussiness with intelligent and safe multi-vehicle EV charging infrastructure powered and managed by ChargeBay.</p>
-              <button className='learn-more transperant'><span>Contact Now</span></button>
+              <a href="/contact-us"><button className='learn-more transperant'><span>Contact Now</span></button></a>
             </div>
             <div className='productpageimg'>
               {isMobileView ? <img src={devicesimgmob} draggable='false' />
@@ -165,22 +165,18 @@ function ProductsPage() {
           </div>
         </section>
 
-        <section id="getintouch-hero-header" style={{ backgroundImage: `url(${watchdemoimg})` }}>
-          <a href="#" className="watch-demo-section-a" >
-            <div className="watch-demo-section" >
-              <h1>Watch Demo <br /><span className='playicon'><FaPlay size={25} color='white' /></span></h1>
-              <span></span>
-            </div>
-          </a>
+        <section id="getintouch-hero-header" >
+          <iframe className='watchDemo' src="https://www.youtube.com/embed/NHT5mTtfIrY?si=bSXs8npncTrsIc3F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
-
+        {/* width="100%" style={{borderBottomLeftRadius: '60px', borderBottomRightRadius : '60px'}} height="800px" */}
+        
         <section className="bcmpartner-section">
           <div className="bcmpartner-section-image">
             <img src={bussinessPartnerimg} alt="" />
           </div>
           <div>
             <h1>Become A Partner</h1>
-            <button className="learn-more-white transperant"><span>Contact Now</span></button>
+            <a href="/contact-us"><button className="learn-more-white transperant"><span>Contact Now</span></button></a>
           </div>
         </section>
 
@@ -202,7 +198,7 @@ function ProductsPage() {
 
         <section className="asked-que">
           <h2>Frequently Asked Questions?</h2>
-          <button className="learn-more-white transperant"><span>All Questions</span></button>
+          <a href="/Q&A"><button className="learn-more-white transperant"><span>All Questions</span></button></a>
         </section>
 
         <footer>

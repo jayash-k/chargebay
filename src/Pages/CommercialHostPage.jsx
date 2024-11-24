@@ -63,7 +63,7 @@ function CommercialHost() {
                   boost property value, and offer a customer-centric experience for their
                   comfort.<br />
                   <span className='highlight-green'>For workspaces:</span> Provide employees with an organized charging system aligned with their schedules, without time limits, and at minimal CAPEX.</p>
-                <button className='learn-more transperant'><span>Contact Now</span></button>
+                <a href="/contact-us"><button className='learn-more transperant'><span>Contact Now</span></button></a>
               </div>
             </AnimatedSection>
           </section>
@@ -174,7 +174,7 @@ function CommercialHost() {
         <AnimatedSection animation='flyIn' direction='down'>
           <section className="asked-que">
             <h2>Frequently Asked Questions?</h2>
-            <button className="learn-more-white transperant"><span>All Questions</span></button>
+            <a href="/Q&A"><button className="learn-more-white transperant"><span>All Questions</span></button></a>
           </section>
         </AnimatedSection>
 

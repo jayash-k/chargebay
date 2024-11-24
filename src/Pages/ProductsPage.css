@@ -117,28 +117,12 @@
     cursor: pointer;
 }
 
-.watch-demo-section {
-    height: 725px;
-    margin: 0;
-    background-color: #000000c2;
+.watchDemo {
+    width: 100%;
+    height: 750px;
     border-bottom-left-radius: 60px;
     border-bottom-right-radius: 60px;
-    align-content: center;
-    text-align: center;
 }
-
-.watch-demo-section h1 {
-    font-size: 2.5rem;
-    cursor: pointer;
-}
-
-.watch-demo-section .playicon {
-    padding: 0 1rem;
-    padding-right: .8rem;
-    border: 5px solid white;
-    border-radius: 50%;
-}
-
 .charger-feature-section {
     background-color: var(--dark-theme);
     padding: 10rem 0;
@@ -192,6 +176,10 @@
 
     .charger-feature-section-image-content {
         order: -1;
+    }
+    .watchDemo{
+        width: 100%;
+        height: 300px;
     }
 }
 

@@ -109,7 +109,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                   <li>
                     <h3>RESOURCES</h3>
                     <li><a href="/#app-demo">Host Login</a></li>
-                    <li><a href="/bussiness-model">Charging Bussiness</a></li>
+                    <li><a href="/bussiness-model">Charging Bussiness Model</a></li>
                     <li><a href="/host-commercial">Commercial Incentive Lookup</a></li>
                     <li><a href="/contact-us">Support & Sales </a></li>
                     <li><a href="/Q&A#hostQA">Host FAQs</a></li>

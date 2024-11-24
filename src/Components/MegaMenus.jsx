@@ -70,7 +70,7 @@ function MegaMenus({ activeNavItem, setIsNavItemHover, toggleForm }) {
                   <h3>RESOURCES</h3>
                   <ul>
                     <li><a href="#"><Link to="/#app-demo">Host Login</Link></a></li>
-                    <li><a href="/bussiness-model">Charging Business</a></li>
+                    <li><a href="/bussiness-model">Charging Business Model</a></li>
                     <li><a href="/host-commercial">Commercial Incentive Lookup</a></li>
                     <li><a href="/contact-us">Support & Sales </a></li>
                     <li><a href="/Q&A#hostQA">Host FAQs</a></li>
