@@ -21,7 +21,7 @@ function Footer() {
                 <div className="footer-content">
                     <div className="footer-left">
                         <div className="footer-logo">
-                            <img src={logo} alt="ChargeBay Logo" className="logo-img" />
+                            <img src={logo} alt="ChargeBay Logo" style={{userSelect :'none',pointerEvents : "none"}} className="logo-img" draggable='false'/>
                         </div>
 
                         <span className="email" ><br />
@@ -42,7 +42,7 @@ function Footer() {
                     <div className="footer-middle">
                         <div className="footer-links">
                             <ul>
-                                <li><a href="/Q&A#driversQA">Drivers</a></li>
+                                <li><a href="/drivers">Drivers</a></li>
                                 <li><a href="/Q&A#hostQA">Hosts</a></li>
                                 <li><a href="/reseller">The Company</a></li>
                                 <li><a href='/T&C'>Terms & Conditions</a></li>
