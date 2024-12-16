@@ -114,19 +114,19 @@ const ChargeBayHome = () => {
       text: "Our efficient hardware solutions optimize energy distribution, ensuring maximum performance with minimal infrastructure impact. ChargeBay's smart technology adapts to your specific needs, providing a cost-effective and scalable charging solution.",
       image: efficient,
       alt: 'Graph showing cost reduction and income increase',
-      linkto : '/products'
+      linkto: '/products'
     },
     supports: {
       text: "ChargeBay offers comprehensive support to ensure smooth operation of your EV charging infrastructure. Our team of experts is available 24/7 to address any concerns and provide guidance on optimizing your charging network.",
       image: supports,
       alt: 'Customer support representative',
-      linkto : '/products'
+      linkto: '/products'
     },
     software: {
       text: "Our powerful software suite provides real-time monitoring, analytics, and control of your EV charging network. From load balancing to user management, ChargeBay's software ensures efficient operation and maximizes your return on investment.",
       image: powerful,
       alt: 'Laptop with software interface',
-      linkto : '/products'
+      linkto: '/products'
     },
   };
 
@@ -157,21 +157,21 @@ const ChargeBayHome = () => {
       title: 'Multi-family',
       content: 'Hosting EV charging stations in multifamily proprities offers a valuable ammenity that caters to the growing demand for electric vehicle support.',
       image: multifamily,
-      linkto : '/host-multifamily'
+      linkto: '/host-multifamily'
     },
     {
       id: 'workplace',
       title: 'Workplace',
       content: 'Hosting EV charging stations in multifamily proprities offers a valuable ammenity that caters to the growing demand for electric vehicle support.',
       image: workplace,
-      linkto : '/host-commercial'
+      linkto: '/host-commercial'
     },
     {
       id: 'public-retail',
       title: 'Public & Retail',
       content: 'Hosting EV charging stations in multifamily proprities offers a valuable ammenity that caters to the growing demand for electric vehicle support.',
       image: retail,
-      linkto : '/host-commercial'
+      linkto: '/host-commercial'
     }
   ];
 
@@ -280,6 +280,78 @@ const ChargeBayHome = () => {
     }
   }, [location]);
 
+
+  const handleMailto = (e) => {
+    e.preventDefault();
+
+    // Get form values
+    const fullName = e.target.fullName.value;
+    const email = e.target.email.value;
+    const inquiry = e.target.inquiry.value;
+    const message = e.target.message.value;
+
+    // Construct the mailto URL
+    const subject = encodeURIComponent(`Inquiry: ${inquiry}`);
+    const body = encodeURIComponent(
+      `Full Name: ${fullName}\nEmail: ${email}\nMessage:\n${message}`
+    );
+
+    // Open the mailto link
+    window.location.href = `mailto:operations@chargebay.app?subject=${subject}&body=${body}`;
+  };
+
+  const containerStyle = isMobileView
+    ? {
+      display: 'grid',
+      gap: '15px',
+      width: 'fit-content'
+    }
+    : {
+      display: 'flex',
+      gap: '25px',
+    };
+
+  const [activeButton, setActiveButton] = useState(0); // Tracks which button is primary
+  let intervalRef = React.useRef(null); // Reference for setInterval
+
+  // Buttons and corresponding images
+  const buttons = [
+    "Booking a charge",
+    "Trip Planning",
+    "Multi-family charger sharing",
+    "Hosting a charger",
+    "Guaranteed parking spots",
+    "Smart-car integration",
+  ];
+
+  const images = [
+    phone, // Corresponds to button 1
+    phone2, // Corresponds to button 2
+    phone, // Corresponds to button 3
+    phone2, // Corresponds to button 4
+    phone, // Corresponds to button 5
+    phone2, // Corresponds to button 6
+  ];
+
+  // Function to start or reset the interval
+  const startInterval = () => {
+    if (intervalRef.current) clearInterval(intervalRef.current);
+    intervalRef.current = setInterval(() => {
+      setActiveButton((prev) => (prev + 1) % buttons.length); // Cycle to next button
+    }, 3000);
+  };
+
+  useEffect(() => {
+    startInterval(); // Start the interval on component mount
+    return () => clearInterval(intervalRef.current); // Cleanup interval on unmount
+  }, []);
+
+  // Handle button click
+  const handleButtonClick = (index) => {
+    setActiveButton(index); // Set clicked button as active
+    startInterval(); // Restart interval from the clicked button
+  };
+
   return (
     <div className="chargebay-home">
       <main>
@@ -293,7 +365,10 @@ const ChargeBayHome = () => {
               <div className="hero-content">
                 <h1 >America's most <span className="highlight-green">affordable</span> EV charging Ecosystem</h1>
                 <p>For business and hosts looking to expand without hassle</p>
-                <Link to="/host-multifamily"> <button className="learn-more transperant" ><span>Learn More</span></button></Link>
+                <div style={containerStyle}>
+                  <Link to="/host-multifamily"> <button className="learn-more transperant" ><span>Learn More</span></button></Link>
+                  <Link to='/#app-demo'><button className="learn-more transperant" ><span>Download Now</span></button></Link>
+                </div>
               </div>
             </AnimatedSection>
             <div className="hero-image">
@@ -329,7 +404,7 @@ const ChargeBayHome = () => {
         <section className="cost-benefit" >
           <div className="home" id='Scrollcost'>
             <h1 className="title">
-              ChargeBay <span className="green">Decreases</span> Turn Around Costs<br/> While <span className="blue">Increasing</span> Net Operating Income
+              ChargeBay <span className="green">Decreases</span> Turn Around Costs<br /> While <span className="blue">Increasing</span> Net Operating Income
             </h1>
             <div className="sections">
               {sections.map((section) => (
@@ -390,38 +465,74 @@ const ChargeBayHome = () => {
         </section>
 
         <section className="app-features">
-          <div className="app-content" id='app-demo'>
+          <div className="app-content" id="app-demo">
             <h1>
               ChargeBay App,
               <br />
               A <span className="highlight-blue">One-Stop Solution</span> for
             </h1>
             <div>
-              <div className='feature-two-btn'>
-                <button className="feature-btn primary">Booking a charge</button>
-                <button className="feature-btn">Trip Planning</button>
+              <div className="feature-two-btn">
+                <button
+                  className={`feature-btn ${activeButton === 0 ? "primary" : ""}`}
+                  onClick={() => handleButtonClick(0)}
+                >
+                  Booking a charge
+                </button>
+                <button
+                  className={`feature-btn ${activeButton === 1 ? "primary" : ""}`}
+                  onClick={() => handleButtonClick(1)}
+                >
+                  Trip Planning
+                </button>
               </div>
-              <div className='feature-two-btn'>
-                <button className="feature-btn">Multi-family charger sharing</button>
-                <button className="feature-btn">Hosting a charger</button>
+              <div className="feature-two-btn">
+                <button
+                  className={`feature-btn ${activeButton === 2 ? "primary" : ""}`}
+                  onClick={() => handleButtonClick(2)}
+                >
+                  Multi-family charger sharing
+                </button>
+                <button
+                  className={`feature-btn ${activeButton === 3 ? "primary" : ""}`}
+                  onClick={() => handleButtonClick(3)}
+                >
+                  Hosting a charger
+                </button>
               </div>
-              <div className='feature-two-btn'>
-                <button className="feature-btn">Guaranteed parking spots</button>
-                <button className="feature-btn">Smart-car integration</button>
+              <div className="feature-two-btn">
+                <button
+                  className={`feature-btn ${activeButton === 4 ? "primary" : ""}`}
+                  onClick={() => handleButtonClick(4)}
+                >
+                  Guaranteed parking spots
+                </button>
+                <button
+                  className={`feature-btn ${activeButton === 5 ? "primary" : ""}`}
+                  onClick={() => handleButtonClick(5)}
+                >
+                  Smart-car integration
+                </button>
               </div>
             </div>
             <div className="app-stores">
-              <a href="" className="store-link">
+              <a href="#" className="store-link">
                 <img src={playstore} alt="Get it on Google Play" />
               </a>
-              <a href="" className="store-link">
+              <a href="#" className="store-link">
                 <img src={appstore} alt="Download on the App Store" />
               </a>
             </div>
           </div>
           <div className="phone-mockup">
-            <AnimatedSection animation={!isMobileView ? "flyIn" : ""} direction='right' length={!isMobileView ? 150 : 0} delay={0.5}>
-              <img src={phone2} alt="ChargeBay App Mockup" />
+            <AnimatedSection
+              animation={!isMobileView ? "flyIn" : ""}
+              direction="right"
+              length={!isMobileView ? 150 : 0}
+              delay={0.5}
+            >
+              {/* Dynamically change the image based on activeButton */}
+              <img src={images[activeButton]} alt="ChargeBay App Mockup" id="phone-mockup-img" />
             </AnimatedSection>
           </div>
         </section>
@@ -432,7 +543,7 @@ const ChargeBayHome = () => {
               <h2 className="section-title">Looking for</h2>
               <div className="card-grid">
                 <Card
-                  title="A guaranteed charging session at your convenience"
+                  title="A guaranteed charging session at your convenience."
                   description=""
                   buttonText="Book Now"
                   linkto='/#app-demo'
@@ -459,7 +570,7 @@ const ChargeBayHome = () => {
         </section> */}
 
         <section className="app-download">
-          <h2>Find out how seamless EV charging can be.<br/> Download the ChargeBay app</h2>
+          <h2>Find out how seamless EV charging can be.<br /> Download the ChargeBay app</h2>
           <div className="app-buttons">
             <img src={playstore} alt="Get it on Google Play" />
             <img src={appstore} alt="Download on the App Store" />
@@ -540,12 +651,12 @@ const ChargeBayHome = () => {
             <div className="case-study-content">
               <h2 className="case-study-subtitle">Case Study</h2>
               <h1 className="case-study-title">
-                Multifamily Case Study: Condo adds 21 EV charging stations and avoids $24K in electrical upgrades
+                How Multi-Family Housing Properties Can Embrace Affordable EV Charging Solutions
               </h1>
               <h6 className="case-study-description">
-                Like most existing buildings, New Times Square faced significant electrical capacity constraints when considering adding EV chargers. A networked load managed approach allowed residents to access their own private charger while saving the corporation time and money.
+                The demand for electric vehicle (EV) charging is surging, and for multi-family housing (MFH) properties, this shift presents both a challenge and an opportunity. Meeting the needs of EV-owning residents doesn’t have to mean expensive upgrades or logistical nightmares. A recent project demonstrates how affordable and smart EV solutions can help MFH properties become "EV-ready" while staying within budget.
               </h6>
-              <Link to={'/underconstruction'}><button className="learn-more-white"><span>Learn More</span></button></Link>
+              <Link to={'https://season-field-bfe.notion.site/How-Multi-Family-Housing-Properties-Can-Embrace-Affordable-EV-Charging-Solutions-ce106c0eedbd4e5480f434ed99784a09'}><button className="learn-more-white"><span>Learn More</span></button></Link>
             </div>
             <div className="case-study-image">
               <img src={casestudyimg} alt="Modern apartment building with EV charging stations" />
@@ -566,15 +677,13 @@ const ChargeBayHome = () => {
         )}
         {isOpen && (
           <div className="contact-form-overlay">
-            <div
-              className={`contact-form ${closing ? "slide-out" : "slide-in"}`}
-              onAnimationEnd={onAnimationEnd} // Handle animation end event
-            >
+            <div className={`contact-form ${closing ? "slide-out" : "slide-in"}`}
+              onAnimationEnd={onAnimationEnd}>
               <button onClick={handleClose} className="close-button" aria-label="Close form">
                 ✕
               </button>
               <h2>Get in Touch</h2>
-              <form onSubmit={(e) => e.preventDefault()}>
+              <form onSubmit={handleMailto}>
                 <div className="form-group">
                   <label htmlFor="fullName">Full Name</label>
                   <input type="text" id="fullName" name="fullName" required />
@@ -586,8 +695,8 @@ const ChargeBayHome = () => {
                 <div className="form-group">
                   <label htmlFor="inquiry">What's the nature of your inquiry</label>
                   <select id="inquiry" name="inquiry" required>
-                    <option value="">Select inquiry type </option>
-                    <option value="Interested in Hosting a station ">Interested in Hosting a station</option>
+                    <option value="">Select inquiry type</option>
+                    <option value="Interested in Hosting a station">Interested in Hosting a station</option>
                     <option value="Interested for multi-family housing solutions">Interested for multi-family housing solutions</option>
                     <option value="Interested to become a distributor">Interested to become a distributor</option>
                     <option value="Interested to become an installer">Interested to become an installer</option>
@@ -596,10 +705,12 @@ const ChargeBayHome = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="message" style={{maxWidth: '90%', textWrap : 'wrap'}}>Please provide all pertinent details about your inquiry</label>
+                  <label htmlFor="message" style={{ maxWidth: '90%', textWrap: 'wrap' }}>
+                    Please provide all pertinent details about your inquiry
+                  </label>
                   <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
-                <button onClick={() => { console.log("Msg Sended") }} className="submit-button">
+                <button type="submit" className="submit-button">
                   Send Message
                 </button>
               </form>

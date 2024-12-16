@@ -110,6 +110,64 @@ function MegaMenus({ activeNavItem, setIsNavItemHover, toggleForm }) {
           </div>
         </div>
       );
+    case 'partners':
+      return (
+        <div className='mega-menudiv' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <div className="mega-menu">
+            <div className="mega-menu-content">
+              <div className="mega-menu-image">
+                <img src={oursoltionimg} alt="ChargeBay solution overview" draggable='false' />
+              </div>
+              <div className="mega-menu-links">
+                <div className="mega-menu-column">
+                  <h3>OUR PARTNERS</h3>
+                  <ul>
+                    <li><a href="/products">Become a Reseller</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </div>
+                <div className="mega-menu-column">
+                  <h3><br></br></h3>
+                  <ul>
+                    <li><a href="/#cost">Who Trusts Us?</a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
+    case 'company':
+      return (
+        <div className='mega-menudiv' onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <div className="mega-menu">
+            <div className="mega-menu-content">
+              <div className="mega-menu-image">
+                <img src={oursoltionimg} alt="ChargeBay solution overview" draggable='false' />
+              </div>
+              <div className="mega-menu-links">
+                <div className="mega-menu-column">
+                  <h3>THE COMPANY</h3>
+                  <ul>
+                    <li><a href="/products">About Us</a></li>
+                    <li><a href="/T&C">T&C</a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </div>
+                <div className="mega-menu-column">
+                  <h3><br></br></h3>
+                  <ul>
+                    <li><a href="/contact-us">Contact</a></li>
+                    <li><a href="#"></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      );
     default:
       return null;
   }

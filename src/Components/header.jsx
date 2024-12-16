@@ -33,7 +33,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
       <header className="header">
         <AnimatedSection animation="flyIn" direction="up">
           <div className="logo">
-            <Link to="/"><img src={logo} alt="Logo" draggable="false" style={{}}/></Link>
+            <Link to="/"><img src={logo} alt="Logo" draggable="false" style={{}} /></Link>
           </div>
         </AnimatedSection>
         <AnimatedSection animation="flyIn" direction="up">
@@ -55,11 +55,13 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
               >
                 <a className="nav-link">Our Solution <ChevronDown className="dropdown-arrow"></ChevronDown></a>
               </li>
-              <li className="nav-item">
-                <a href='/reseller' className="nav-link">Our Partners</a>
+              <li className="nav-item"
+                onClick={() => handleNavItemClick('partners')}>
+                <a className="nav-link">Our Partners<ChevronDown className="dropdown-arrow"></ChevronDown></a>
               </li>
-              <li className="nav-item">
-                <a href='/bussiness-model' className="nav-link">The Company</a>
+              <li className="nav-item"
+                onClick={() => handleNavItemClick('company')}>
+                <a className="nav-link">The Company<ChevronDown className="dropdown-arrow"></ChevronDown></a>
               </li>
               <div className="cta-buttons">
 
@@ -74,8 +76,8 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
             <button id={isMenuOpen ? 'toggled' : ''} className="menu-toggle" onClick={toggleMenu}>
               {isMenuOpen ?
                 <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" height="45px" width="45px" viewBox="0 0 489 489">
-                   <line x1="113.5" y1="150" x2="275.5" y2="350" stroke="#000" stroke-width="30"></line>
-                   <line x1="275.5" y1="150" x2="113.5" y2="350" stroke="#000" stroke-width="30"></line>
+                  <line x1="113.5" y1="150" x2="275.5" y2="350" stroke="#000" stroke-width="30"></line>
+                  <line x1="275.5" y1="150" x2="113.5" y2="350" stroke="#000" stroke-width="30"></line>
                 </svg> : '☰'}
             </button>
             <ul className={isMenuOpen ? 'open' : 'close'}>

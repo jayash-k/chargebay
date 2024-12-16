@@ -31,6 +31,7 @@ import { ImPriceTag } from 'react-icons/im';
 
 function ProductsPage() {
   const isMobileView = window.innerWidth <= 768;
+  const isFitView = window.innerWidth <= 900;
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeNavItem, setActiveNavItem] = useState(null);
@@ -60,6 +61,27 @@ function ProductsPage() {
       setClosing(false);
     }
   };
+
+
+  const handleMailto = (e) => {
+    e.preventDefault();
+
+    // Get form values
+    const fullName = e.target.fullName.value;
+    const email = e.target.email.value;
+    const inquiry = e.target.inquiry.value;
+    const message = e.target.message.value;
+
+    // Construct the mailto URL
+    const subject = encodeURIComponent(`Inquiry: ${inquiry}`);
+    const body = encodeURIComponent(
+      `Full Name: ${fullName}\nEmail: ${email}\nMessage:\n${message}`
+    );
+
+    // Open the mailto link
+    window.location.href = `mailto:operations@chargebay.app?subject=${subject}&body=${body}`;
+  };
+
 
   return (
     <>
@@ -115,13 +137,15 @@ function ProductsPage() {
           <h1 className="why-chargebay-ecosystem-title">
             What is the ChargeBay <span className="highlight-blue">Ecosystem?</span>
           </h1>
-          {!isMobileView ?
+          {!isFitView ?
             <img src={ecosystemCard} alt="" draggable='false' />
             :
             <>
+            <div className='why-chargebay-ecosystem-images'>
               <img src={chargermanimg} alt='' draggable='false' className='firstImg' />
               <img src={bookingmanimg} alt='' draggable='false' />
               <img src={powermanimg} alt='' draggable='false' />
+              </div>
             </>}
         </section>
 
@@ -169,7 +193,7 @@ function ProductsPage() {
           <iframe className='watchDemo' src="https://www.youtube.com/embed/NHT5mTtfIrY?si=bSXs8npncTrsIc3F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </section>
         {/* width="100%" style={{borderBottomLeftRadius: '60px', borderBottomRightRadius : '60px'}} height="800px" */}
-        
+
         <section className="bcmpartner-section">
           <div className="bcmpartner-section-image">
             <img src={bussinessPartnerimg} alt="" />
@@ -214,15 +238,13 @@ function ProductsPage() {
 
         {isOpen && (
           <div className="contact-form-overlay">
-            <div
-              className={`contact-form ${closing ? "slide-out" : "slide-in"}`}
-              onAnimationEnd={onAnimationEnd} // Handle animation end event
-            >
+            <div className={`contact-form ${closing ? "slide-out" : "slide-in"}`}
+              onAnimationEnd={onAnimationEnd}>
               <button onClick={handleClose} className="close-button" aria-label="Close form">
                 ✕
               </button>
               <h2>Get in Touch</h2>
-              <form onSubmit={(e) => e.preventDefault()}>
+              <form onSubmit={handleMailto}>
                 <div className="form-group">
                   <label htmlFor="fullName">Full Name</label>
                   <input type="text" id="fullName" name="fullName" required />
@@ -235,7 +257,7 @@ function ProductsPage() {
                   <label htmlFor="inquiry">What's the nature of your inquiry</label>
                   <select id="inquiry" name="inquiry" required>
                     <option value="">Select inquiry type</option>
-                    <option value="Interested in Hosting a station ">Interested in Hosting a station</option>
+                    <option value="Interested in Hosting a station">Interested in Hosting a station</option>
                     <option value="Interested for multi-family housing solutions">Interested for multi-family housing solutions</option>
                     <option value="Interested to become a distributor">Interested to become a distributor</option>
                     <option value="Interested to become an installer">Interested to become an installer</option>
@@ -244,10 +266,12 @@ function ProductsPage() {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="message">Please provide all pertinent details about your inquiry</label>
+                  <label htmlFor="message" style={{ maxWidth: '90%', textWrap: 'wrap' }}>
+                    Please provide all pertinent details about your inquiry
+                  </label>
                   <textarea id="message" name="message" rows="4" required></textarea>
                 </div>
-                <button onClick={() => { console.log("Msg Sended") }} className="submit-button">
+                <button type="submit" className="submit-button">
                   Send Message
                 </button>
               </form>

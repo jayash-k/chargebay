@@ -143,7 +143,6 @@
 }
 
 :root {
-  --background-color: var(--dark-theme);
   --text-color: #ffffff;
   --blue-600: #0066ff;
   --gray-400: #9ca3af;
@@ -152,7 +151,7 @@
 }
 
 .calculator-section-calculator-section {
-  background-color: var(--background-color);
+  background-color: var(--dark-theme);
   color: var(--text-color);
   font-family: system-ui, -apple-system, sans-serif;
   margin: 0;

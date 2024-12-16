@@ -137,9 +137,13 @@
 .seamless-section-image-wrapper img {
     width: 100%;
     height: 450px;
-    margin-bottom: 50px;
+    margin-top: 75px;
     border-radius: 29px;
     object-fit: contain;
+}
+
+.seamless-section-image-wrapper.lastImg img{
+    margin-top: 0;
 }
 
 /*# seamless section end*/

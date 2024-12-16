@@ -159,6 +159,7 @@
 }
 
 .reach-us textarea {
+  font-family: Arial, Helvetica, sans-serif;
   height: 100px;
   resize: none;
   border-radius: 9px;
@@ -190,8 +191,13 @@
 
 /*#reachus section end*/
 
-@media (max-width: 786px) {
+@media (max-width: 768px) {
   /*# getintouch-hero start*/
+
+  #getintouch-hero-header{
+    border-bottom-left-radius: 29px;
+    border-bottom-right-radius: 29px;
+  }
 
   .getintouch-hero {
     padding-top: 3rem;

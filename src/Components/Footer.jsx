@@ -2,8 +2,7 @@ import React from 'react'
 import "./Footer.css"
 
 import logo from "../Images/Logo White.png"
-import fb from "../Images/fb logo.png"
-import twiter from "../Images/x logo.png"
+import insta from "../Images/insta logo.webp"
 import linkedin from "../Images/in logo.png"
 import yt from "../Images/yt logo.png"
 
@@ -67,15 +66,14 @@ function Footer() {
                     <div className="legal-links">
                         <a href="/T&C">Terms of Service</a>
                         <span className="separator">|</span>
-                        <a href="/T&C">Security</a>
+                        <a href="/Q&A">FAQ</a>
                         <span className="separator">|</span>
                         <a href="/privacy-policy">Privacy Policy</a>
                         <span className="separator">|</span>
-                        <span className="copyright">© 2012 All Rights Reserved.</span>
+                        <span className="copyright">© 2024 All Rights Reserved.</span>
                     </div>
                     <div className="social-icons">
-                        <a href="/facebookLink" className="social-icon"><img src={fb} alt="Facebook" /></a>
-                        <a href="/twiterLink" className="social-icon"><img src={twiter} alt="Twitter" /></a>
+                        <a href="https://www.instagram.com/chargebay.app?igsh=MWVvMnYxYWhqOWlzaw==" className="social-icon"><img src={insta} alt="Facebook" /></a>
                         <a href="https://www.linkedin.com/company/chargebay-usa/" className="social-icon"><img src={linkedin} alt="LinkedIn" /></a>
                         <a href="https://youtube.com/@chargebay?si=LSIMoaOYpKfMYdN_" className="social-icon"><img src={yt} alt="YouTube" /></a>
                     </div>
