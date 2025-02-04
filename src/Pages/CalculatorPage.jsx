@@ -45,25 +45,25 @@ const GetInTouch = () => {
         }
     };
 
-    
-  const handleMailto = (e) => {
-    e.preventDefault();
 
-    // Get form values
-    const fullName = e.target.fullName.value;
-    const email = e.target.email.value;
-    const inquiry = e.target.inquiry.value;
-    const message = e.target.message.value;
+    const handleMailto = (e) => {
+        e.preventDefault();
 
-    // Construct the mailto URL
-    const subject = encodeURIComponent(`Inquiry: ${inquiry}`);
-    const body = encodeURIComponent(
-      `Full Name: ${fullName}\nEmail: ${email}\nMessage:\n${message}`
-    );
+        // Get form values
+        const fullName = e.target.fullName.value;
+        const email = e.target.email.value;
+        const inquiry = e.target.inquiry.value;
+        const message = e.target.message.value;
 
-    // Open the mailto link
-    window.location.href = `mailto:operations@chargebay.app?subject=${subject}&body=${body}`;
-  };
+        // Construct the mailto URL
+        const subject = encodeURIComponent(`Inquiry: ${inquiry}`);
+        const body = encodeURIComponent(
+            `Full Name: ${fullName}\nEmail: ${email}\nMessage:\n${message}`
+        );
+
+        // Open the mailto link
+        window.location.href = `mailto:operations@chargebay.app?subject=${subject}&body=${body}`;
+    };
 
 
     return (
@@ -81,16 +81,16 @@ const GetInTouch = () => {
                                 <h2>Let ChargeBay calculate your costs and revenue</h2>
                                 <p style={{ marginBottom: '2rem' }}>Use the ChargeBay's Charging Calculator below to estimate the benefits based on your requirements for this value-added amenity</p>
                                 <button className='learn-more transperant'
-                                onClick={()=>{
-                                    
-                                    if(isMobileView){
-                                        window.scrollBy({top : 1750,behavior: 'smooth'})
-                                    }
-                                    else{
-                                        window.scrollBy({top : 1450,behavior: 'smooth'})
-                                    }    
+                                    onClick={() => {
 
-                                }}><span>Let's Calculate</span></button>
+                                        if (isMobileView) {
+                                            window.scrollBy({ top: 1750, behavior: 'smooth' })
+                                        }
+                                        else {
+                                            window.scrollBy({ top: 1450, behavior: 'smooth' })
+                                        }
+
+                                    }}><span>Let's Calculate</span></button>
                             </div>
                         </AnimatedSection>
                     </section>

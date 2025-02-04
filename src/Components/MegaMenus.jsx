@@ -63,6 +63,7 @@ function MegaMenus({ activeNavItem, setIsNavItemHover, toggleForm }) {
                   <ul>
                     <li><a href="/host-multifamily">Multifamily Housing </a></li>
                     <li><a href="/host-commercial">Commercial Worspace & Retail</a></li>
+                    <li><a href="/calculator">Charging Projection Calculator</a></li>
                     <li><a href="#"></a></li>
                   </ul>
                 </div>

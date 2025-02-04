@@ -23,28 +23,28 @@ const AnimatedSection = ({
   const sectionRef = useRef(null);
 
   useEffect(() => {
-  const currentSection = sectionRef.current; // Copy the ref value to a local variable
+    const currentSection = sectionRef.current; // Copy the ref value to a local variable
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-        observer.unobserve(entry.target);
-      }
-    },
-    { threshold: 0.1 }
-  );
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
 
-  if (currentSection) {
-    observer.observe(currentSection);
-  }
-
-  return () => {
     if (currentSection) {
-      observer.unobserve(currentSection); // Use the local variable in cleanup
+      observer.observe(currentSection);
     }
-  };
-}, []);
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection); // Use the local variable in cleanup
+      }
+    };
+  }, []);
 
   const getAnimation = () => {
     switch (animation) {

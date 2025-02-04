@@ -20,7 +20,7 @@ function Footer() {
                 <div className="footer-content">
                     <div className="footer-left">
                         <div className="footer-logo">
-                            <img src={logo} alt="ChargeBay Logo" style={{userSelect :'none',pointerEvents : "none"}} className="logo-img" draggable='false'/>
+                            <img src={logo} alt="ChargeBay Logo" style={{ userSelect: 'none', pointerEvents: "none" }} className="logo-img" draggable='false' />
                         </div>
 
                         <span className="email" ><br />
@@ -36,7 +36,7 @@ function Footer() {
                                 <li><a href={`mailto:${email2}`} onClick={handleEmailClick}>{email2}</a></li>
                             </div>
                         </span>
-                        <a href="https://www.google.com/maps/search/?api=1&query=3702+Spectrum+Blvd+Ste+165+Tampa+FL+33612+USA" style={{textDecoration : 'none'}}><span className="address" style={{ marginTop: '1.2rem' }}><br />3702 Spectrum Blvd. Ste. 165<br />Tampa, FL 33612, USA</span></a>
+                        <a href="https://www.google.com/maps/search/?api=1&query=3702+Spectrum+Blvd+Ste+165+Tampa+FL+33612+USA" style={{ textDecoration: 'none' }}><span className="address" style={{ marginTop: '1.2rem' }}><br />3702 Spectrum Blvd. Ste. 165<br />Tampa, FL 33612, USA</span></a>
                     </div>
                     <div className="footer-middle">
                         <div className="footer-links">

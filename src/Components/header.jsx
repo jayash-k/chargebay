@@ -59,7 +59,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                 onClick={() => handleNavItemClick('partners')}>
                 <a className="nav-link">Our Partners<ChevronDown className="dropdown-arrow"></ChevronDown></a>
               </li>
-              <li className="nav-item"
+              <li className="nav-item last-nav-item"
                 onClick={() => handleNavItemClick('company')}>
                 <a className="nav-link">The Company<ChevronDown className="dropdown-arrow"></ChevronDown></a>
               </li>
@@ -107,6 +107,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                     <h3>PROPERTIES</h3>
                     <li><a href="/host-multifamily">Multifamily Housing </a></li>
                     <li><a href="/host-commercial">Commercial Worspace & Retail</a></li>
+                    <li><a href="/calculator">Charging Projection Calculator</a></li>
                   </li>
                   <li>
                     <h3>RESOURCES</h3>
@@ -132,16 +133,32 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                 </ul>
               </li>
               <li className="nav-item">
-                <a href='/reseller' className="nav-link">Our Partners</a>
+                <a className="nav-link">Our Partners <ChevronDown className="dropdown-arrow"></ChevronDown></a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <h3>OUR PARTNERS</h3>
+                    <li><a href="/products">Become a Reseller</a></li>
+                    <li><a href="/contact-us">Contact Us</a></li>
+                    <li><a href="/#cost">Who Trusts Us?</a></li>
+                  </li>
+                </ul>
               </li>
               <li className="nav-item">
-                <a href='/bussiness-model' className="nav-link">The Company</a>
+                <a className="nav-link">The Company<ChevronDown className="dropdown-arrow"></ChevronDown></a>
+                <ul className="dropdown-menu">
+                  <li>
+                    <h3>THE COMPANY</h3>
+                    <li><a href="/products">About Us</a></li>
+                    <li><a href="/T&C">T&C</a></li>
+                    <li><a href="/contact-us">Contact</a></li>
+                  </li>
+                </ul>
               </li>
               <h5>Are you host?</h5>
-              <h3>Log in &#x2192;</h3>
+              <h3><a href="/login" style={{ textDecoration: 'none', color: 'black' }}>Log in &#x2192;</a></h3>
               <div className="cta-buttons">
                 <button onClick={toggleForm} className="navbtn contacts"><span>Contact</span></button>
-                <button className="navbtn"><span>Host a Station</span></button>
+                <button className="navbtn" onClick={() => window.open("/contact-us")}><span>Host a Station</span></button>
               </div>
             </ul>
           </nav>

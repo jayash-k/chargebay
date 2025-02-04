@@ -141,10 +141,10 @@ function ProductsPage() {
             <img src={ecosystemCard} alt="" draggable='false' />
             :
             <>
-            <div className='why-chargebay-ecosystem-images'>
-              <img src={chargermanimg} alt='' draggable='false' className='firstImg' />
-              <img src={bookingmanimg} alt='' draggable='false' />
-              <img src={powermanimg} alt='' draggable='false' />
+              <div className='why-chargebay-ecosystem-images'>
+                <img src={chargermanimg} alt='' draggable='false' className='firstImg' />
+                <img src={bookingmanimg} alt='' draggable='false' />
+                <img src={powermanimg} alt='' draggable='false' />
               </div>
             </>}
         </section>

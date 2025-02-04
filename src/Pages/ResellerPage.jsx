@@ -165,13 +165,13 @@ const Partners = () => {
                     <p>
                         Our company seeks passionate collaborators to meet the growing demand for accessible EV charging infrastructure. Your expertise aligns with our goal of providing support. Let's collaborate to create a sustainable future for EV charging
                     </p>
-                    <button className='learn-more transperant'><span>Contact Now</span></button>
+                    <a href="/contact-us"><button className='learn-more transperant'><span>Contact Now</span></button></a>
                 </section>
 
                 <AnimatedSection animation='flyIn' length={100} direction='down'>
                     <section className="doubts getintouchdoubts">
                         <h2>Got more doubts?</h2>
-                        <button className="learn-more-white transperant"><span>All Questions</span></button>
+                        <a href="/Q&A"><button className="learn-more-white transperant"><span>All Questions</span></button></a>
                     </section>
                 </AnimatedSection>
 

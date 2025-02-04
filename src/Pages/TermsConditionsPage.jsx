@@ -34,7 +34,7 @@ export default function PrivacyPolicy() {
     }
   };
 
-      
+
   const handleMailto = (e) => {
     e.preventDefault();
 
@@ -57,32 +57,11 @@ export default function PrivacyPolicy() {
 
   return (
     <>
-      <header>
-        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} setIsNavItemHover={setActiveNavItem} activeNavItem={activeNavItem} />
-      </header>
       <article className="privacy-policy-container">
         <header className="privacy-policy-header">
           <h1 className="privacy-policy-title">TERMS AND CONDITIONS</h1>
           <p className="privacy-policy-lastUpdated">Last updated October 07, 2024</p>
         </header>
-
-        {/* <section className="privacy-policy-section">
-          <p>
-            This Privacy Notice for <strong>ChargeBay LLC</strong> (&quot;we,&quot; &quot;us,&quot; or &quot;our&quot;), describes how and why we might access, collect, store, use, and/or share (&quot;process&quot;) your personal information when you use our services (&quot;Services&quot;), including when you:
-          </p>
-          <ol className="privacy-policy-list">
-            <li>Use the ChargeBay application/website</li>
-            <li>Integrate your vehicle with ChargeBay</li>
-            <li>Host a station with ChargeBay</li>
-          </ol>
-        </section>
-
-        <section className="privacy-policy-highlight">
-          <h2 className="privacy-policy-subtitle">Questions or concerns?</h2>
-          <p>
-            Reading this Privacy Notice will help you understand your privacy rights and choices. We are responsible for making decisions about how your personal information is processed. If you do not agree with our policies and practices, please do not use our Services.
-          </p>
-        </section> */}
 
         <section className="privacy-policy-section">
           <h2 className="privacy-policy-sectionTitle">AGREEMENT TO OUR LEGAL TERMS</h2>

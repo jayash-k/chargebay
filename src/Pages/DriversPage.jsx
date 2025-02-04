@@ -203,7 +203,7 @@ function AboutChargingPage() {
                         <p >At ChargeBay, we empower EV drivers with the freedom to select their <span className="highlight-black">preferred charging method.</span></p>
                         <p >Whether through our user-friendly mobile app or our complimentary <span className="highlight-black">tap-and-go RFID charge digital card</span>, we are committed to delivering a seamless charging experience.</p>
                         <p >Our dedication extends beyond app downloads, as <span className="highlight-black">you can conveniently scan the QR code</span> and utilize our intuitive app-clips for effortless charging.</p>
-                        <button className="learn-more-white transperant"><span>Learn More</span></button>
+                        <a href="/host-commercial"><button className="learn-more-white transperant"><span>Learn More</span></button></a>
                     </div>
                     <div className="evdriversimage">
                         <AnimatedSection animation='flyIn' direction='down'>
@@ -282,13 +282,13 @@ function AboutChargingPage() {
 
                 <section className="discover">
                     <h1>Discover ChargeBay Station</h1>
-                    <button className='learn-more transperant'><span>Find Now</span></button>
+                    <a href="/products"><button className='learn-more transperant'><span>Find Now</span></button></a>
                 </section>
 
                 <AnimatedSection animation='flyIn' direction='down'>
                     <section className="asked-que">
                         <h2>Frequently Asked Questions?</h2>
-                        <button className="learn-more-white transperant"><span>All Questions</span></button>
+                        <a href="/Q&A"><button className="learn-more-white transperant"><span>All Questions</span></button></a>
                     </section>
                 </AnimatedSection>
                 <footer>

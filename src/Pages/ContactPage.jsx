@@ -199,7 +199,7 @@ const GetInTouch = () => {
                                         checked={formData.agreeToPrivacy}
                                         onChange={handleChange}
                                     />
-                                    <label>I agree to the Privacy Policy</label>
+                                    <label>I agree to the <a href="/privacy-policy" style={{ color: '#7e7e7eb0' }}>Privacy Policy</a></label>
                                 </div>
                                 <button type="submit" disabled={isSubmitting}>
                                     <span>{isSubmitting ? 'Wait a moment...' : 'Send Message'}</span>

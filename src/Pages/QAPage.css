@@ -131,8 +131,8 @@
   scroll-behavior: smooth;
 }
 
-.FAQ-detailes-Question::-webkit-scrollbar{
-    display: none;
+.FAQ-detailes-Question::-webkit-scrollbar {
+  display: none;
 }
 
 .question-item {
@@ -203,7 +203,7 @@
     font-size: 1.3rem;
   }
 
-  .accordion-container.qasection.driversQA{
+  .accordion-container.qasection.driversQA {
     padding-bottom: 0;
   }
 

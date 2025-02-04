@@ -1,628 +1,622 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
 :root {
-    --white: #fff;
-    --black: #000;
-    --dark-theme: #00060e;
-    --title-gray: #888;
-    --subtitle-gray: #7e7e7eb0;
-    --highlight-green: #0cc301;
-    --highlight-blue: #0774f3;
+  --white: #fff;
+  --black: #000;
+  --dark-theme: #00060e;
+  --title-gray: #888;
+  --subtitle-gray: #7e7e7eb0;
+  --highlight-green: #0cc301;
+  --highlight-blue: #0774f3;
 }
 
 /*# chargings-hero section start*/
 .chargings-hero {
-    display: flex;
-    background-color: #000000c2;
-    align-items: end;
-    padding-left: 4rem;
-    padding-bottom: 12rem;
+  display: flex;
+  background-color: #000000c2;
+  align-items: end;
+  padding-left: 4rem;
+  padding-bottom: 12rem;
 }
 
 .chargings-hero-content {
-    max-width: 52%;
-    margin-top: 100px;
-    margin-left: 20px;
+  max-width: 52%;
+  margin-top: 100px;
+  margin-left: 20px;
 }
 
 .chargings-hero-content h1 {
-    font-size: 3rem;
-    font-weight: 500;
-    color: var(--white);
-    line-height: 1.2;
-    margin-bottom: 0px;
+  font-size: 3rem;
+  font-weight: 500;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 0px;
 }
 
 .chargings-hero-content p {
-    font-size: 1.35rem;
-    font-weight: lighter;
-    line-height: 1.3;
-    color: var(--white);
-    
+  font-size: 1.35rem;
+  font-weight: lighter;
+  line-height: 1.3;
+  color: var(--white);
 }
 
 .chargings-hero-content h3 {
-    font-size: 1.45rem;
-    font-weight: lighter;
-    line-height: 1.3;
-    margin-bottom: 2rem;
-    color: var(--white);
+  font-size: 1.45rem;
+  font-weight: lighter;
+  line-height: 1.3;
+  margin-bottom: 2rem;
+  color: var(--white);
 }
 
 .chargings-hero-image {
-    width: auto;
-    height: 450px;
+  width: auto;
+  height: 450px;
 }
 
 .chargings-hero-image img {
-    width: 100%;
-    height: 100%;
-    margin-left: 100%;
-    border: 1px solid var(--white);
-    border-radius: 29px;
+  width: 100%;
+  height: 100%;
+  margin-left: 100%;
+  border: 1px solid var(--white);
+  border-radius: 29px;
 }
 
 /*# chargings-hero section end*/
 
 /*# seamless section start*/
 .seamless-section {
-    text-align: left;
-    margin: 0 auto;
-    padding: 8rem 10rem;
-    padding-bottom: 1rem;
-    padding-right: 5rem;
+  text-align: left;
+  margin: 0 auto;
+  padding: 8rem 10rem;
+  padding-bottom: 1rem;
+  padding-right: 5rem;
 }
 
 .seamless-section h2 {
-    font-size: 2.5rem;
-    font-weight: bold;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 .seamless-section-content-wrapper {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 0 100px;
-    margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0 100px;
+  margin-top: 50px;
 }
 
 .seamless-section-titles {
-    padding-top: 4rem;
-    flex: 1;
-    align-items: center;
+  padding-top: 4rem;
+  flex: 1;
+  align-items: center;
 }
 
 .seamless-section-titles h3 {
-    font-size: 1.8rem;
-    margin: 20px 0;
-    color: var(--title-gray);
-    transition: color 0.3s ease;
+  font-size: 1.8rem;
+  margin: 20px 0;
+  color: var(--title-gray);
+  transition: color 0.3s ease;
 }
 
 .seamless-section-titles h3 p {
-    font-size: 1rem;
-    margin-top: -5px;
-    font-weight: 400;
+  font-size: 1rem;
+  margin-top: -5px;
+  font-weight: 400;
 }
 
 .seamless-section-titles h3.active {
-    font-weight: bold;
-    color: #000;
-    /* Active title color */
+  font-weight: bold;
+  color: #000;
+  /* Active title color */
 }
 
 .seamless-section-titles h3.inactive {
-    color: #ccc;
-    /* Inactive title color */
+  color: #ccc;
+  /* Inactive title color */
 }
 
 .seamless-section-image-container {
-    flex: 1;
-    overflow: hidden;
-    max-height: 450px;
+  flex: 1;
+  overflow: hidden;
+  max-height: 450px;
 }
 
 .seamless-section-image-scroll {
-    display: grid;
-    /* Stack images vertically */
-    transition: transform 0.8s ease-in-out;
-    /* Smooth scroll effect */
-    height: 100%;
+  display: grid;
+  /* Stack images vertically */
+  transition: transform 0.8s ease-in-out;
+  /* Smooth scroll effect */
+  height: 100%;
 }
 
 .seamless-section-image-wrapper {
-    height: auto;
+  height: auto;
 }
 
 .seamless-section-image-wrapper img {
-    width: 100%;
-    height: 450px;
-    margin-top: 75px;
-    border-radius: 29px;
-    object-fit: contain;
+  width: 100%;
+  height: 450px;
+  margin-top: 75px;
+  border-radius: 29px;
+  object-fit: contain;
 }
 
-.seamless-section-image-wrapper.lastImg img{
-    margin-top: 0;
+.seamless-section-image-wrapper.lastImg img {
+  margin-top: 0;
 }
 
 /*# seamless section end*/
 
 .abt-charging-why-chargebay {
-    padding: 6rem 10rem;
-    padding-right: 7rem;
-    padding-bottom: 0;
-    font-family: Arial, sans-serif;
+  padding: 6rem 10rem;
+  padding-right: 7rem;
+  padding-bottom: 0;
+  font-family: Arial, sans-serif;
 }
 
 .abt-charging-highlight {
-    color: var(--highlight-blue);
+  color: var(--highlight-blue);
 }
 
 .abt-charging-why-chargebay-title {
-    font-size: 2.6rem;
-    font-weight: bold;
-    margin-bottom: 48px;
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin-bottom: 48px;
 }
 
 .abt-charging-why-chargebay-features {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: start;
-    gap: 0 8rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 0 8rem;
 }
 
 .abt-charging-why-chargebay-feature {
-    display: flex;
-    margin-bottom: 8rem;
+  display: flex;
+  margin-bottom: 8rem;
 }
 
 .abt-charging-why-chargebay-icon {
-    font-size: 32px;
-    color: #3b82f6;
-    flex-shrink: 0;
-    margin: auto 0; 
-    margin-right: 16px;
-    animation: fadefromupdown 2s ease-in-out infinite;
+  font-size: 32px;
+  color: #3b82f6;
+  flex-shrink: 0;
+  margin: auto 0;
+  margin-right: 16px;
+  animation: fadefromupdown 2s ease-in-out infinite;
 }
 
 @keyframes fadefromupdown {
-    0% {
-        max-height: 0;
-        opacity: 0;
-    }
+  0% {
+    max-height: 0;
+    opacity: 0;
+  }
 
-    100% {
-        max-height: 100%;
-        opacity: 1;
-    }
+  100% {
+    max-height: 100%;
+    opacity: 1;
+  }
 }
 
 .abt-charging-why-chargebay-feature-title {
-    font-size: 1.6rem;
-    color: var(--black);
-    font-weight: 500;
-    line-height: 1.5;
-    width: 84%;
-    margin: 0;
+  font-size: 1.6rem;
+  color: var(--black);
+  font-weight: 500;
+  line-height: 1.5;
+  width: 84%;
+  margin: 0;
 }
 
 .evdriverssection {
-    display: flex;
-    padding: 4rem 8rem;
-    padding-bottom: 0;
-    background-color: #f4f4f4;
+  display: flex;
+  padding: 4rem 8rem;
+  padding-bottom: 0;
+  background-color: #f4f4f4;
 }
 
 .evdrivers {
-    max-width: 75%;
-    padding-bottom: 8rem;
+  max-width: 75%;
+  padding-bottom: 8rem;
 }
 
 .evdrivers p {
-    font-size: 1.6rem;
-    font-weight: 400;
-    color: var(--title-gray);
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: var(--title-gray);
 }
 
 .evdrivers span {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 .evdriversimage {
-    width: 20%;
-    object-fit: cover;
-    margin: 0;
-    padding: 0;
+  width: 20%;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
 }
 
 .evdriverssection img {
-    padding-top: 250px;
-    margin-bottom: -10px;
-    margin-left: 25%;
-    width: 340px;
+  padding-top: 250px;
+  margin-bottom: -10px;
+  margin-left: 25%;
+  width: 340px;
 }
 
 .app-download.abt-chargings {
-    margin: 8rem 8rem;
-    margin-top: 2rem;
+  margin: 8rem 8rem;
+  margin-top: 2rem;
 }
 
 .app-download h2 {
-    font-size: 1.9rem;
-    font-weight: 600;
-    padding: 0 150px;
+  font-size: 1.9rem;
+  font-weight: 600;
+  padding: 0 150px;
 }
 
 /*# discover section start*/
 .discover {
-    padding: 4rem;
-    text-align: center;
-    background-color: var(--dark-theme);
+  padding: 4rem;
+  text-align: center;
+  background-color: var(--dark-theme);
 }
 
 .discover h1 {
-    font-size: 2.5rem;
-    font-weight: 500;
-    line-height: 1.1;
-    color: var(--white);
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  color: var(--white);
 }
 
 /*# discover section end*/
 
 /*# asked-que section start*/
 .asked-que {
-    background-color: #f7f7f7;
-    text-align: center;
-    padding: 2rem 2rem;
-    padding-bottom: 3rem;
-    margin: 12rem 10rem;
-    border-radius: 22px;
+  background-color: #f7f7f7;
+  text-align: center;
+  padding: 2rem 2rem;
+  padding-bottom: 3rem;
+  margin: 12rem 10rem;
+  border-radius: 22px;
 }
 
 .asked-que h2 {
-    font-size: 2.6rem;
-    font-weight: 500;
+  font-size: 2.6rem;
+  font-weight: 500;
 }
 
 /*# asked-que section end*/
 
 @media (max-width: 786px) {
+  /*# chargings-hero section start*/
+  .chargings-hero {
+    display: grid;
+    max-width: 100%;
+    padding: 0;
+    padding-bottom: 2rem;
+  }
 
-    /*# chargings-hero section start*/
-    .chargings-hero {
-        display: grid;
-        max-width: 100%;
-        padding: 0;
-        padding-bottom: 2rem;
-    }
+  .chargings-hero-content {
+    margin-top: 30px;
+    max-width: 100%;
+  }
 
-    .chargings-hero-content {
-        margin-top: 30px;
-        max-width: 100%;
-    }
+  .chargings-hero-content h1 {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
 
-    .chargings-hero-content h1 {
-        font-size: 2rem;
-        line-height: 1.3;
-    }
+  .chargings-hero-content p {
+    max-width: 100%;
+    font-size: 1.2rem;
+  }
 
-    .chargings-hero-content p {
-        max-width: 100%;
-        font-size: 1.2rem;
-    }
+  .chargings-hero-content h3 {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    line-height: 1.3;
+    margin-bottom: 2rem;
+    color: var(--white);
+  }
 
-    .chargings-hero-content h3 {
-        font-size: 1.2rem;
-        font-weight: lighter;
-        line-height: 1.3;
-        margin-bottom: 2rem;
-        color: var(--white);
-    }
+  .chargings-hero-image {
+    width: 200px;
+    height: 380px;
+    margin-left: 25%;
+  }
 
-    .chargings-hero-image {
-        width: 200px;
-        height: 380px;
-        margin-left: 25%;
-    }
+  .chargings-hero-image img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    border: 1px solid var(--white);
+    border-radius: 29px;
+  }
 
-    .chargings-hero-image img {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        border: 1px solid var(--white);
-        border-radius: 29px;
-    }
+  /*# chargings-hero section end*/
 
-    /*# chargings-hero section end*/
+  /*# seamless section start*/
 
-    /*# seamless section start*/
+  .seamless-section {
+    padding: 4rem 1rem;
+  }
 
-    .seamless-section {
-        padding: 4rem 1rem;
-    }
+  .seamless-section h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    max-width: 80%;
+    margin-bottom: 35px;
+  }
 
-    .seamless-section h2 {
-        font-size: 1.5rem;
-        font-weight: bold;
-        max-width: 80%;
-        margin-bottom: 35px;
-    }
+  .seamless-section-content-wrapper {
+    display: grid;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0 50px;
+    margin-top: 50px;
+  }
 
-    .seamless-section-content-wrapper {
-        display: grid;
-        justify-content: space-between;
-        align-items: flex-start;
-        gap: 0 50px;
-        margin-top: 50px;
-    }
+  .seamless-section-titles {
+    padding-top: 0;
+    flex: 1;
+    align-items: center;
+  }
 
-    .seamless-section-titles {
-        padding-top: 0;
-        flex: 1;
-        align-items: center;
-    }
+  .seamless-section-titles h3 {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    color: var(--title-gray);
+    transition: color 0.3s ease;
+  }
 
-    .seamless-section-titles h3 {
-        font-size: 1.2rem;
-        margin: 20px 0;
-        color: var(--title-gray);
-        transition: color 0.3s ease;
-    }
+  .seamless-section-titles h3 p {
+    font-size: 1rem;
+    margin-top: -5px;
+    font-weight: 400;
+  }
 
-    .seamless-section-titles h3 p {
-        font-size: 1rem;
-        margin-top: -5px;
-        font-weight: 400;
-    }
+  .seamless-section-titles h3.active {
+    font-weight: bold;
+    color: #000;
+    /* Active title color */
+  }
 
-    .seamless-section-titles h3.active {
-        font-weight: bold;
-        color: #000;
-        /* Active title color */
-    }
+  .seamless-section-titles h3.inactive {
+    color: #ccc;
+    /* Inactive title color */
+  }
 
-    .seamless-section-titles h3.inactive {
-        color: #ccc;
-        /* Inactive title color */
-    }
+  .seamless-section-image-container {
+    flex: 1;
+    overflow: hidden;
+    max-height: 450px;
+  }
 
-    .seamless-section-image-container {
-        flex: 1;
-        overflow: hidden;
-        max-height: 450px;
-    }
+  .seamless-section-image-scroll {
+    display: grid;
+    /* Stack images vertically */
+    transition: transform 0.8s ease-in-out;
+    /* Smooth scroll effect */
+    height: 100%;
+  }
 
-    .seamless-section-image-scroll {
-        display: grid;
-        /* Stack images vertically */
-        transition: transform 0.8s ease-in-out;
-        /* Smooth scroll effect */
-        height: 100%;
-    }
+  .seamless-section-image-wrapper {
+    height: auto;
+  }
 
-    .seamless-section-image-wrapper {
-        height: auto;
-    }
+  .seamless-section-image-wrapper img {
+    width: 100%;
+    height: 450px;
+    border-radius: 29px;
+    margin-bottom: 30px;
+    object-fit: contain;
+  }
 
-    .seamless-section-image-wrapper img {
-        width: 100%;
-        height: 450px;
-        border-radius: 29px;
-        margin-bottom: 30px;
-        object-fit: contain;
-    }
+  /*# seamless-carousel section for mobile view only*/
+  /*start*/
+  .seamless-carousel-container {
+    position: relative;
+    border-radius: 0.5rem;
+  }
 
-    /*# seamless-carousel section for mobile view only*/
-    /*start*/
-    .seamless-carousel-container {
-        position: relative;
-        border-radius: 0.5rem;
-    }
+  .seamless-carousel-card {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 250px;
+  }
 
-    .seamless-carousel-card {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        padding-bottom: 250px;
-    }
+  .seamless-card-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
 
-    .seamless-card-images {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 20px;
+  .seamless-card-overlay {
+    top: 160px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 10px;
+    max-width: 75%;
+  }
 
-    }
+  .seamless-card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: -15px;
+    color: white;
+    line-height: 1.3;
+  }
 
-    .seamless-card-overlay {
-        top: 160px;
-        position: absolute;
-        display: flex;
-        flex-direction: column;
-        padding: 0px 10px;
-        max-width: 75%;
-    }
+  .seamless-card-title.seamless-card-title-lowheight {
+    margin-top: 40px;
+  }
 
-    .seamless-card-title {
-        font-size: 1.2rem;
-        font-weight: bold;
-        margin-bottom: -15px;
-        color: white;
-        line-height: 1.3;
-    }
+  .seamless-card-title.seamless-card-title-highheight {
+    margin-top: 0px;
+  }
 
-    .seamless-card-title.seamless-card-title-lowheight {
-        margin-top: 40px;
-    }
+  .seamless-card-subtext {
+    font-size: 0.875rem;
+    color: #e5e7eb;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
 
-    .seamless-card-title.seamless-card-title-highheight {
-        margin-top: 0px;
-    }
+  .seamless-next-button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background-color: #0000;
+    color: white;
+    border: 1px solid white;
+    border-radius: 9999px;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-    .seamless-card-subtext {
-        font-size: 0.875rem;
-        color: #e5e7eb;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    }
+  .seamless-next-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
 
-    .seamless-next-button {
-        position: absolute;
-        bottom: 1rem;
-        right: 1rem;
-        background-color: #0000;
-        color: white;
-        border: 1px solid white;
-        border-radius: 9999px;
-        padding: 0.5rem;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+  /*end*/
+  /*# seamless-carousel section for mobile view only*/
 
-    .seamless-next-button svg {
-        width: 1.5rem;
-        height: 1.5rem;
-    }
+  /*# seamless section end*/
 
-    /*end*/
-    /*# seamless-carousel section for mobile view only*/
+  .evdriverssection {
+    display: grid;
+    padding: 2rem;
+    padding-bottom: 0;
+    background-color: #f4f4f4;
+  }
 
-    /*# seamless section end*/
+  .evdrivers {
+    max-width: 100%;
+    padding-bottom: 0;
+  }
 
-    .evdriverssection {
-        display: grid;
-        padding: 2rem;
-        padding-bottom: 0;
-        background-color: #f4f4f4;
-    }
+  .evdrivers p {
+    font-size: 1.1rem;
+  }
 
-    .evdrivers {
-        max-width: 100%;
-        padding-bottom: 0;
-    }
+  .evdrivers span {
+    font-weight: 400;
+  }
 
-    .evdrivers p {
-        font-size: 1.1rem;
-    }
+  .evdriversimage {
+    width: 100%;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+  }
 
-    .evdrivers span {
-        font-weight: 400;
-    }
+  .evdriverssection img {
+    padding-top: 0;
+    margin-bottom: -5px;
+    margin-left: 20%;
+    width: 280px;
+  }
 
-    .evdriversimage {
-        width: 100%;
-        object-fit: cover;
-        margin: 0;
-        padding: 0;
-    }
+  .abt-charging-why-chargebay {
+    padding: 3.5rem 1.5rem;
+    padding-right: 2rem;
+    padding-bottom: 0;
+  }
 
-    .evdriverssection img {
-        padding-top: 0;
-        margin-bottom: -5px;
-        margin-left: 20%;
-        width: 280px;
-    }
+  .abt-charging-why-chargebay-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+  }
 
+  .abt-charging-why-chargebay-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: start;
+    margin-top: 4rem;
+    gap: 10px;
+  }
 
-    .abt-charging-why-chargebay {
-        padding: 3.5rem 1.5rem;
-        padding-right: 2rem;
-        padding-bottom: 0;
-    }
+  .abt-charging-why-chargebay-feature {
+    display: flex;
+    margin-bottom: 1.5rem;
+  }
 
-    .abt-charging-why-chargebay-title {
-        font-size: 1.8rem;
-        font-weight: bold;
-        margin-bottom: 30px;
-    }
+  .abt-charging-why-chargebay-icon {
+    font-size: 28px;
+    width: 35px;
+    margin-right: 25px;
+    align-items: center;
+  }
 
-    .abt-charging-why-chargebay-features {
-        display: grid;
-        grid-template-columns: 1fr;
-        align-items: start;
-        margin-top: 4rem;
-        gap: 10px;
-    }
+  .abt-charging-why-chargebay-feature-title {
+    font-size: 1.1rem;
+    color: var(--black);
+    font-weight: 500;
+    line-height: 1.5;
+    width: 84%;
+    margin: 0;
+    margin-top: 5px;
+  }
 
-    .abt-charging-why-chargebay-feature {
-        display: flex;
-        margin-bottom: 1.5rem;
-    }
+  .app-download.abt-chargings {
+    margin: 1rem 1rem;
+    margin-top: 2rem;
+  }
 
-    .abt-charging-why-chargebay-icon {
-        font-size: 28px;
-        width: 35px;
-        margin-right: 25px;
-        align-items: center;
-    }
+  /*# discover section start*/
+  .discover {
+    padding: 4rem 1rem;
+    text-align: center;
+  }
 
-    .abt-charging-why-chargebay-feature-title {
-        font-size: 1.1rem;
-        color: var(--black);
-        font-weight: 500;
-        line-height: 1.5;
-        width: 84%;
-        margin: 0;
-        margin-top: 5px;
-    }
+  .discover h1 {
+    text-wrap: wrap;
+    font-size: 22px;
+    line-height: 1.1;
+  }
 
-    .app-download.abt-chargings {
-        margin: 1rem 1rem;
-        margin-top: 2rem;
-    }
+  /*# discover section end*/
 
-    /*# discover section start*/
-    .discover {
-        padding: 4rem 1rem;
-        text-align: center;
-    }
+  /*# asked-que section start*/
+  .asked-que {
+    background-color: #f7f7f7;
+    text-align: center;
+    padding: 2rem 2rem;
+    margin: 4rem 1.5rem;
+    border-radius: 22px;
+  }
 
-    .discover h1 {
-        text-wrap: wrap;
-        font-size: 22px;
-        line-height: 1.1;
-    }
+  .asked-que h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
 
-    /*# discover section end*/
+  .asked-que button {
+    font-size: 0.8rem;
+  }
 
-    /*# asked-que section start*/
-    .asked-que {
-        background-color: #f7f7f7;
-        text-align: center;
-        padding: 2rem 2rem;
-        margin: 4rem 1.5rem;
-        border-radius: 22px;
-    }
+  /*# asked-que section end*/
+  .app-download {
+    padding: 20px;
+    margin: 60px 20px;
+    margin-bottom: 80px;
+  }
 
-    .asked-que h2 {
-        font-size: 1.2rem;
-        font-weight: 600;
-    }
+  .app-download h2 {
+    font-size: 1.25rem;
+    padding: 0;
+  }
 
-    .asked-que button {
-        font-size: .8rem;
-    }
-
-    /*# asked-que section end*/
-    .app-download {
-        padding: 20px;
-        margin: 60px 20px;
-        margin-bottom: 80px;
-    }
-
-    .app-download h2 {
-        font-size: 1.25rem;
-        padding: 0;
-    }
-
-    .app-buttons {
-        height: 50px;
-    }
-
-
+  .app-buttons {
+    height: 50px;
+  }
 }

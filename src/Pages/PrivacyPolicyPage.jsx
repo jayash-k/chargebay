@@ -53,13 +53,10 @@ export default function PrivacyPolicy() {
     // Open the mailto link
     window.location.href = `mailto:operations@chargebay.app?subject=${subject}&body=${body}`;
   };
-  
+
 
   return (
     <>
-      <header>
-        <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} toggleForm={toggleForm} setIsNavItemHover={setActiveNavItem} activeNavItem={activeNavItem} />
-      </header>
       <article className="privacy-policy-container">
         <header className="privacy-policy-header">
           <h1 className="privacy-policy-title">Privacy Policy</h1>

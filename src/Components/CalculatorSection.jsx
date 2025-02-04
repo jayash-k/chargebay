@@ -89,14 +89,34 @@ const CustomSelectItem = React.forwardRef(({ className, children, ...props }, re
     </SelectPrimitive.Item>
 ));
 
-// ProfitCalculator component
-const ProfitCalculator = () => {
-    const [chargerPower, setChargerPower] = useState(11.5);
-    const [costPer1000, setCostPer1000] = useState(0.3);
+
+
+// CalculatorCard component
+const CalculatorCard = () => {
+    const [numChargers, setNumChargers] = useState(2);
+    const [installationCost, setInstallationCost] = useState(0);
+    const [chargerType, setChargerType] = useState("level2");
+    const [monthlyCost, setMonthlyCost] = useState(45);
+    const [upfrontCost, setUpfrontCost] = useState(0);
+
+    useEffect(() => {
+        let costPerMonth = (chargerType === "level2" ? 45 : 50);
+        setMonthlyCost(costPerMonth);
+    }, [chargerType]);
+
+    useEffect(() => {
+        let totalUpfrontCost = (numChargers * monthlyCost * 10) + installationCost;
+        setUpfrontCost(totalUpfrontCost);
+    }, [numChargers, monthlyCost, installationCost]);
+
+
+
+    const [chargerPower, setChargerPower] = useState(11.50);
+    const [costPer1000, setCostPer1000] = useState(0.13);
     const [costPer3000, setCostPer3000] = useState(0.12);
-    const [kwhPrice, setKwhPrice] = useState(0.49);
+    const [kwhPrice, setKwhPrice] = useState(0.35);
     const [splitPercentage, setSplitPercentage] = useState(30);
-    const [hoursPerMonth, setHoursPerMonth] = useState(2);
+    const [hoursPerMonth, setHoursPerMonth] = useState(50);
 
     const [electricityCost, setElectricityCost] = useState(0);
     const [revenueEarned, setRevenueEarned] = useState(0);
@@ -104,149 +124,21 @@ const ProfitCalculator = () => {
 
     useEffect(() => {
         // Calculate electricity cost
-        const totalKwh = chargerPower * hoursPerMonth * 30; // Assuming 30 days per month
+        const totalKwh = chargerPower * hoursPerMonth * 30;
         const cost = totalKwh <= 1000 ? totalKwh * costPer1000 : 1000 * costPer1000 + (totalKwh - 1000) * costPer3000;
-        setElectricityCost(cost);
+        setElectricityCost(150);
+
+        let consumedKwh = numChargers * chargerPower * hoursPerMonth;
 
         // Calculate revenue earned
-        const revenue = totalKwh * kwhPrice;
+        const revenue = kwhPrice * hoursPerMonth * chargerPower * numChargers;
         setRevenueEarned(revenue);
 
         // Calculate revenue to host
         const hostRevenue = revenue * (splitPercentage / 100);
         setRevenueToHost(hostRevenue);
-    }, [chargerPower, costPer1000, costPer3000, kwhPrice, splitPercentage, hoursPerMonth]);
+    }, [chargerPower, costPer1000, costPer3000, kwhPrice, splitPercentage, hoursPerMonth, numChargers]);
 
-    return (
-        <div className="calculator-section-profit-calculator">
-            <h2 className="calculator-section-section-title">
-                Electricity Cost + Profit Per Charger Calculator
-            </h2>
-
-            <div className="calculator-section-calculator-grid">
-                <div className="calculator-section-calculator-inputs">
-                    <div className="calculator-section-input-group">
-                        <label>Charger Power Output (kWh)</label>
-                        <CustomSlider
-                            defaultValue={chargerPower}
-                            max={20}
-                            step={0.1}
-                            formatValue={(value) => value.toFixed(2)}
-                            onValueChange={setChargerPower}
-                        />
-                    </div>
-
-                    <div className="calculator-section-input-group">
-                        <h3>Input Your Electricity Cost</h3>
-                        <div className="calculator-section-sub-input-group">
-                            <label>Cost Per kWh up to 1000 kWh</label>
-                            <CustomSlider
-                                defaultValue={costPer1000}
-                                max={1}
-                                step={0.01}
-                                formatValue={(value) => `$${value.toFixed(2)}`}
-                                onValueChange={setCostPer1000}
-                            />
-                        </div>
-
-                        <div className="calculator-section-sub-input-group">
-                            <label>Cost per kWh up to 3000 kWh</label>
-                            <CustomSlider
-                                defaultValue={costPer3000}
-                                max={0.4}
-                                step={0.01}
-                                formatValue={(value) => `$${value.toFixed(2)}`}
-                                onValueChange={setCostPer3000}
-                            />
-                        </div>
-                    </div>
-
-                    <div className="calculator-section-input-group">
-                        <label>Select no. of hours per charger per month</label>
-                        <CustomSelect value={hoursPerMonth.toString()} onValueChange={(value) => setHoursPerMonth(Number(value))}>
-                            <CustomSelectTrigger>
-                                <span>{hoursPerMonth}</span>
-                            </CustomSelectTrigger>
-                            <CustomSelectContent>
-                                {[2, 4, 6, 8].map((hours) => (
-                                    <CustomSelectItem key={hours} value={hours.toString()}>{hours}</CustomSelectItem>
-                                ))}
-                            </CustomSelectContent>
-                        </CustomSelect>
-                        <span className="calculator-section-helper-text">
-                            1 EV Charger 5 times per week for 4-8 hours
-                        </span>
-                    </div>
-
-                    <div className="calculator-section-input-group">
-                        <label>
-                            kWh price to consumer <span className="calculator-section-recommended">(recommended $0.35)</span>
-                        </label>
-                        <CustomSlider
-                            defaultValue={kwhPrice}
-                            max={1}
-                            step={0.01}
-                            formatValue={(value) => `$${value.toFixed(2)}`}
-                            onValueChange={setKwhPrice}
-                        />
-                    </div>
-
-                    <div className="calculator-section-input-group">
-                        <label>Split % earned by Host</label>
-                        <CustomSlider
-                            defaultValue={splitPercentage}
-                            max={100}
-                            step={1}
-                            formatValue={(value) => `${value}%`}
-                            onValueChange={setSplitPercentage}
-                        />
-                    </div>
-                </div>
-
-                <div className="calculator-section-calculator-results">
-                    <div className="calculator-section-result-cards">
-                        <div className="calculator-section-result-card">
-                            <div className="calculator-section-result-value">${electricityCost.toFixed(2)}</div>
-                            <div className="calculator-section-result-label">Cost of Electricity to host</div>
-                        </div>
-                        <div className="calculator-section-result-card">
-                            <div className="calculator-section-result-value">${revenueEarned.toFixed(2)}</div>
-                            <div className="calculator-section-result-label">Revenue earned</div>
-                        </div>
-                        <div className="calculator-section-result-card">
-                            <div className="calculator-section-result-value">${revenueToHost.toFixed(2)}</div>
-                            <div className="calculator-section-result-label">Revenue to host</div>
-                        </div>
-                    </div>
-
-                    <div className="calculator-section-chart-section">
-                        <p className="calculator-section-chart-description">Lorem Ipsum est du trit. Lorem Ipsum est du trit.</p>
-                        <div className="calculator-section-chart-legend">
-                            <div className="calculator-section-legend-color"></div>
-                            <span>$ Cumulative Profit</span>
-                        </div>
-                        <img src={chartImg} alt="" className="calculator-section-chart-image" width={750} height={400} draggable='false' style={{ pointerEvents: 'none' }} />
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-// CalculatorCard component
-const CalculatorCard = () => {
-    const [electricRate, setElectricRate] = useState("2");
-    const [chargerType, setChargerType] = useState("level2");
-    const [installationCost, setInstallationCost] = useState("0");
-    const [upfrontCost, setUpfrontCost] = useState(990);
-
-    useEffect(() => {
-        // Calculate upfront cost based on selected options
-        let cost = 990; // Base cost
-        if (chargerType === "level3") cost += 500;
-        if (installationCost === "1000") cost += 1000;
-        setUpfrontCost(cost);
-    }, [chargerType, installationCost]);
 
     return (
         <section className="calculator-section-calculator-section">
@@ -259,41 +151,36 @@ const CalculatorCard = () => {
                     <div className="calculator-section-input-grid-container">
                         <div className="calculator-section-input-grid">
                             <div className="calculator-section-input-group">
-                                <label>Electric Rate ($/kWh)</label>
-                                <CustomSelect value={electricRate} onValueChange={setElectricRate}>
-                                    <CustomSelectTrigger>
-                                        <span>{electricRate}</span>
-                                    </CustomSelectTrigger>
-                                    <CustomSelectContent>
-                                        <CustomSelectItem value="1">1</CustomSelectItem>
-                                        <CustomSelectItem value="2">2</CustomSelectItem>
-                                        <CustomSelectItem value="3">3</CustomSelectItem>
-                                    </CustomSelectContent>
-                                </CustomSelect>
+                                <label>No of Chargers</label>
+                                <input
+                                    type="number"
+                                    value={numChargers}
+                                    maxLength={2}
+                                    onChange={(e) => setNumChargers(e.target.value)}
+                                    className="calculator-section-text-input"
+                                />
                             </div>
                             <div className="calculator-section-input-group">
                                 <label>Charger Type</label>
-                                <CustomSelect value={chargerType} onValueChange={setChargerType}>
-                                    <CustomSelectTrigger>
-                                        <span>{chargerType === "level2" ? "Level 2" : "Level 3"}</span>
-                                    </CustomSelectTrigger>
-                                    <CustomSelectContent>
-                                        <CustomSelectItem value="level2">Level 2</CustomSelectItem>
-                                        <CustomSelectItem value="level3">Level 3</CustomSelectItem>
-                                    </CustomSelectContent>
-                                </CustomSelect>
+                                <select
+                                    value={chargerType}
+                                    onChange={(e) => setChargerType(e.target.value)}
+                                    className="calculator-section-text-input"
+                                >
+                                    <option value="level2">Level 2 - 9.6kW/12kW ($45/month)</option>
+                                    <option value="level2rfid">Level 2 - 9.6kW/12kW (RFID) ($50/month)</option>
+                                </select>
                             </div>
                             <div className="calculator-section-input-group">
                                 <label>Installation cost per charger</label>
-                                <CustomSelect value={installationCost} onValueChange={setInstallationCost}>
-                                    <CustomSelectTrigger>
-                                        <span>{installationCost === "0" ? "$0.0 (Installed By Host)" : "$1000 (Professional Installation)"}</span>
-                                    </CustomSelectTrigger>
-                                    <CustomSelectContent>
-                                        <CustomSelectItem value="0">$0.0 (Installed By Host)</CustomSelectItem>
-                                        <CustomSelectItem value="1000">$1000 (Professional Installation)</CustomSelectItem>
-                                    </CustomSelectContent>
-                                </CustomSelect>
+                                <select
+                                    value={installationCost}
+                                    onChange={(e) => setInstallationCost(Number(e.target.value))}
+                                    className="calculator-section-text-input"
+                                >
+                                    <option value={0}>$0.0 (Installed By Host)</option>
+                                    <option value={2000}>$2000 (Professional Installation)</option>
+                                </select>
                             </div>
                             <div className="calculator-section-input-group">
                                 <label>Cost if paid upfront per year</label>
@@ -307,14 +194,122 @@ const CalculatorCard = () => {
                         </div>
 
                         <div className="calculator-section-total-cost">
-                            {/* <div className="total-cost-value">${(upfrontCost / 12).toFixed(2)}</div> */}
-                            <div className="calculator-section-total-cost-value">$132.00</div>
+                            <div className="calculator-section-total-cost-value">${(numChargers * monthlyCost).toFixed(2)}</div>
                             <div className="calculator-section-total-cost-label">Total charger cost to host per month</div>
                         </div>
                     </div>
                 </div>
 
-                <ProfitCalculator />
+
+                <div className="calculator-section-profit-calculator">
+                    <h2 className="calculator-section-section-title">
+                        Electricity Cost + Profit Per Charger Calculator
+                    </h2>
+
+                    <div className="calculator-section-calculator-grid">
+                        <div className="calculator-section-calculator-inputs">
+                            <div className="calculator-section-input-group">
+                                <label>Charger Power Output (kWh)</label>
+                                <CustomSlider
+                                    defaultValue={chargerPower}
+                                    max={20}
+                                    step={0.1}
+                                    formatValue={(value) => value.toFixed(2)}
+                                    onValueChange={setChargerPower}
+                                />
+                            </div>
+
+                            <div className="calculator-section-input-group">
+                                <h3>Input Your Electricity Cost</h3>
+                                <div className="calculator-section-sub-input-group">
+                                    <label>Cost Per kWh up to 1000 kWh</label>
+                                    <CustomSlider
+                                        defaultValue={costPer1000}
+                                        max={1}
+                                        step={0.01}
+                                        formatValue={(value) => `$${value.toFixed(2)}`}
+                                        onValueChange={setCostPer1000}
+                                    />
+                                </div>
+
+                                <div className="calculator-section-sub-input-group">
+                                    <label>Cost per kWh up to 3000 kWh</label>
+                                    <CustomSlider
+                                        defaultValue={costPer3000}
+                                        max={1}
+                                        step={0.01}
+                                        formatValue={(value) => `$${value.toFixed(2)}`}
+                                        onValueChange={setCostPer3000}
+                                    />
+                                </div>
+                            </div>
+
+                            <div className="calculator-section-input-group">
+                                <label>Input no. of hours per charger per month</label>
+                                <input
+                                    type="number"
+                                    value={hoursPerMonth}
+                                    onChange={(e) => setHoursPerMonth(e.target.value)}
+                                    className="calculator-section-text-input"
+                                />
+                                <span className="calculator-section-helper-text">
+                                    1 EV Charges 5 times per week for 4-8 hours (e.g: 40 hours per week)
+                                </span>
+                            </div>
+
+                            <div className="calculator-section-input-group">
+                                <label>
+                                    kWh price to consumer <span className="calculator-section-recommended">(recommended $0.35)</span>
+                                </label>
+                                <CustomSlider
+                                    defaultValue={kwhPrice}
+                                    max={1}
+                                    step={0.01}
+                                    formatValue={(value) => `$${value.toFixed(2)}`}
+                                    onValueChange={setKwhPrice}
+                                />
+                            </div>
+
+                            <div className="calculator-section-input-group">
+                                <label>Split % earned by Host</label>
+                                <CustomSlider
+                                    defaultValue={splitPercentage}
+                                    max={100}
+                                    step={1}
+                                    formatValue={(value) => `${value}%`}
+                                    onValueChange={setSplitPercentage}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="calculator-section-calculator-results">
+                            <div className="calculator-section-result-cards">
+                                <div className="calculator-section-result-card">
+                                    <div className="calculator-section-result-value">${electricityCost.toFixed(2)}</div>
+                                    <div className="calculator-section-result-label">Cost of Electricity to host</div>
+                                </div>
+                                <div className="calculator-section-result-card">
+                                    <div className="calculator-section-result-value">${revenueEarned.toFixed(2)}</div>
+                                    <div className="calculator-section-result-label">Revenue earned</div>
+                                </div>
+                                <div className="calculator-section-result-card">
+                                    <div className="calculator-section-result-value">${revenueToHost.toFixed(2)}</div>
+                                    <div className="calculator-section-result-label">Gross Profit to host</div>
+                                </div>
+                            </div>
+
+                            <div className="calculator-section-chart-section">
+                                <p className="calculator-section-chart-description">Gross Profit to host
+                                    Y-o-Y gross profit collection for host</p>
+                                <div className="calculator-section-chart-legend">
+                                    <div className="calculator-section-legend-color"></div>
+                                    <span>$ Cumulative Profit</span>
+                                </div>
+                                <img src={chartImg} alt="" className="calculator-section-chart-image" width={750} height={400} draggable='false' style={{ pointerEvents: 'none' }} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );

@@ -24,7 +24,14 @@ import workplace from "../Images/workplace.png"
 import retail from "../Images/publicretail.png"
 
 import phone from "../Images/phone.png"
-import phone2 from "../Images/phone 2.png"
+
+import phone1 from "../Images/Book a charger.png"
+import phone2 from "../Images/Plan a trip.png"
+import phone3 from "../Images/Multi-family charger sharing.png"
+import phone4 from "../Images/Hosting a charger.png"
+import phone5 from "../Images/Guaranteed parking spots.png"
+import phone6 from "../Images/Smart-car integration.png"
+
 import playstore from "../Images/googleplay.png"
 import appstore from "../Images/appstore 1.png"
 
@@ -325,12 +332,12 @@ const ChargeBayHome = () => {
   ];
 
   const images = [
-    phone, // Corresponds to button 1
+    phone1, // Corresponds to button 1
     phone2, // Corresponds to button 2
-    phone, // Corresponds to button 3
-    phone2, // Corresponds to button 4
-    phone, // Corresponds to button 5
-    phone2, // Corresponds to button 6
+    phone3, // Corresponds to button 3
+    phone4, // Corresponds to button 4
+    phone5, // Corresponds to button 5
+    phone6, // Corresponds to button 6
   ];
 
   // Function to start or reset the interval

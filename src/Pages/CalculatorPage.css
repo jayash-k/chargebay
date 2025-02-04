@@ -215,7 +215,7 @@
   align-items: center;
   justify-content: space-between;
   border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #ffffff;
   padding: 0 1rem;
   font-size: 1rem;
   color: #000;
@@ -281,7 +281,7 @@
   height: 3rem;
   width: 100%;
   border-radius: 0.5rem;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: #ffffff;
   padding: 0 1rem;
   font-size: 1rem;
   color: #000;

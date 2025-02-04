@@ -32,7 +32,6 @@ function App() {
         <Route path="/host-commercial" element={<CommercialHostPage />} />
         <Route path="/Q&A" element={<QAPage />} />
         <Route path="/products" element={<ProductsPage />} />
-
         <Route path="/calculator" element={<CalculatorPage />}></Route>
         <Route path="/privacy-policy" element={<PrivacyPolicy />}></Route>
         <Route path="/T&C" element={<TermsConditions />}></Route>
