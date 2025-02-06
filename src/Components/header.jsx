@@ -16,14 +16,7 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
 
   const [activeMenu, setActiveMenu] = useState(null);
 
-  // const handleMouseEnter = (item) => {
-  //   setIsNavItemHover(item);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setIsNavItemHover(null);
-  // };
-
+  // Desktop: this is unchanged
   const handleNavItemClick = (item) => {
     setIsNavItemHover(item);
   };
@@ -74,18 +67,18 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
           </nav>
           <nav id='mobnavs'>
             <button id={isMenuOpen ? 'toggled' : ''} className="menu-toggle" onClick={toggleMenu}>
-              {isMenuOpen ?
-                <svg xmlns="http://www.w3.org/2000/svg" fill="#000000" height="45px" width="45px" viewBox="0 0 489 489">
-                  <line x1="113.5" y1="150" x2="275.5" y2="350" stroke="#000" stroke-width="30"></line>
-                  <line x1="275.5" y1="150" x2="113.5" y2="350" stroke="#000" stroke-width="30"></line>
-                </svg> : '☰'}
+              {isMenuOpen ? 'X': '☰'}
             </button>
             <ul className={isMenuOpen ? 'open' : 'close'}>
               <div className="logo-nav">
                 <img src={logomob} alt="Logo" />
               </div>
               <li className="nav-item">
-                <a className="nav-link">Drivers <ChevronDown className="dropdown-arrow"></ChevronDown></a>
+                {/* Hidden checkbox to toggle dropdown */}
+                <input type="checkbox" id="mobile-drivers" className="dropdown-toggle" hidden />
+                <label htmlFor="mobile-drivers" className="nav-link">
+                  Drivers <ChevronDown className="dropdown-arrow" />
+                </label>
                 <ul className="dropdown-menu">
                   <li>
                     <h3>CHARGERS</h3>
@@ -100,8 +93,13 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                   </li>
                 </ul>
               </li>
+
+              {/* Mobile Nav Item for "Hosts" */}
               <li className="nav-item">
-                <a className="nav-link">Hosts <ChevronDown className="dropdown-arrow"></ChevronDown></a>
+                <input type="checkbox" id="mobile-hosts" className="dropdown-toggle" hidden />
+                <label htmlFor="mobile-hosts" className="nav-link">
+                  Hosts <ChevronDown className="dropdown-arrow" />
+                </label>
                 <ul className="dropdown-menu">
                   <li>
                     <h3>PROPERTIES</h3>
@@ -119,8 +117,13 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                   </li>
                 </ul>
               </li>
+
+              {/* Mobile Nav Item for "Our Solution" */}
               <li className="nav-item">
-                <a className="nav-link">Our Solution <ChevronDown className="dropdown-arrow"></ChevronDown></a>
+                <input type="checkbox" id="mobile-solution" className="dropdown-toggle" hidden />
+                <label htmlFor="mobile-solution" className="nav-link">
+                  Our Solution <ChevronDown className="dropdown-arrow" />
+                </label>
                 <ul className="dropdown-menu">
                   <li>
                     <h3>PRODUCTS</h3>
@@ -132,8 +135,13 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                   </li>
                 </ul>
               </li>
+
+              {/* Mobile Nav Item for "Our Partners" */}
               <li className="nav-item">
-                <a className="nav-link">Our Partners <ChevronDown className="dropdown-arrow"></ChevronDown></a>
+                <input type="checkbox" id="mobile-partners" className="dropdown-toggle" hidden />
+                <label htmlFor="mobile-partners" className="nav-link">
+                  Our Partners <ChevronDown className="dropdown-arrow" />
+                </label>
                 <ul className="dropdown-menu">
                   <li>
                     <h3>OUR PARTNERS</h3>
@@ -143,8 +151,13 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                   </li>
                 </ul>
               </li>
+
+              {/* Mobile Nav Item for "The Company" */}
               <li className="nav-item">
-                <a className="nav-link">The Company<ChevronDown className="dropdown-arrow"></ChevronDown></a>
+                <input type="checkbox" id="mobile-company" className="dropdown-toggle" hidden />
+                <label htmlFor="mobile-company" className="nav-link">
+                  The Company<ChevronDown className="dropdown-arrow" />
+                </label>
                 <ul className="dropdown-menu">
                   <li>
                     <h3>THE COMPANY</h3>
@@ -154,8 +167,11 @@ const Header = ({ isMenuOpen, toggleMenu, toggleForm, setIsNavItemHover }) => {
                   </li>
                 </ul>
               </li>
+
               <h5>Are you host?</h5>
-              <h3><a href="/login" style={{ textDecoration: 'none', color: 'black' }}>Log in &#x2192;</a></h3>
+              <h3>
+                <a href="/login" style={{ textDecoration: 'none', color: 'black' }}>Log in &#x2192;</a>
+              </h3>
               <div className="cta-buttons">
                 <button onClick={toggleForm} className="navbtn contacts"><span>Contact</span></button>
                 <button className="navbtn" onClick={() => window.open("/contact-us")}><span>Host a Station</span></button>

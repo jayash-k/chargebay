@@ -10,8 +10,8 @@ import logomob from "../Images/Logo Black.png"
 
 import bannerimg from "../Images/banner.png"
 
-import devicesimg from "../Images/devices.png"
-import devicesimgmob from "../Images/devices mobview.png"
+import devicesimg from "../Images/devices2.png"
+import devicesimgmob from "../Images/devices mobview2.png"
 import chargerimg from "../Images/charger.png"
 
 import reducecost from "../Images/cost.png"

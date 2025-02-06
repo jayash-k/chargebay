@@ -20,7 +20,7 @@ import chargerfeatureimg from '../Images/featureimg.png'
 import watchdemoimg from '../Images/wachdemo.png'
 import bannerimg from "../Images/banner.png"
 import devicesimg from "../Images/devices.png"
-import devicesimgmob from "../Images/devices mobview.png"
+import devicesimgmob from "../Images/devices mobview2.png"
 import chargerimg from "../Images/sample charger.png"
 import ecosystemimg from '../Images/ecosystem.png'
 

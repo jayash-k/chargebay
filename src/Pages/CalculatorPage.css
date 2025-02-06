@@ -420,7 +420,7 @@
 .calculator-section-chart-section {
   margin-top: 2rem;
   width: 100%;
-  max-width: 600px;
+  padding: 0;
 }
 
 .calculator-section-chart-description {
@@ -531,6 +531,7 @@
   .calculator-section-result-cards {
     display: flex;
     flex-direction: column;
+    overflow: visible;
   }
 
   .calculator-section-chart-image {

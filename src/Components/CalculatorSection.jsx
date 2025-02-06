@@ -7,6 +7,17 @@ import { ChevronDown } from 'lucide-react';
 import chartImg from "../Images/calculator page chart.png"
 import logo from "../Images/Logo White.png"
 
+import {
+    BarChart,
+    Bar,
+    XAxis,
+    YAxis,
+    Tooltip,
+    CartesianGrid,
+    ResponsiveContainer,
+} from "recharts";
+
+
 // CustomSlider component (unchanged)
 const CustomSlider = ({
     defaultValue = 0,
@@ -305,13 +316,96 @@ const CalculatorCard = () => {
                                     <div className="calculator-section-legend-color"></div>
                                     <span>$ Cumulative Profit</span>
                                 </div>
-                                <img src={chartImg} alt="" className="calculator-section-chart-image" width={750} height={400} draggable='false' style={{ pointerEvents: 'none' }} />
+                                <CustomBarChart profit={revenueToHost.toFixed(2)} />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+    );
+};
+
+
+
+const CustomBarChart = ({ profit }) => {
+    const calculateProfit = (year) => {
+        if (year === 1) return profit * 12;
+        return 2 * calculateProfit(year - 1) + 0.1 * calculateProfit(year - 1);
+    };
+
+    const data = Array.from({ length: 5 }, (_, i) => ({
+        year: (i + 1).toString(),
+        value: calculateProfit(i + 1),
+    }));
+
+    const renderCustomizedLabel = (props) => {
+        const { x, y, width, value } = props;
+        return (
+            <text
+                x={x + width / 2}
+                y={y + 20}
+                fill="white"
+                textAnchor="middle"
+                fontSize={14}
+                fontWeight="bold"
+            >
+                {`${(value / 1000).toFixed(1)} K`} {/* Converts value to thousands (K) */}
+            </text>
+        );
+    };
+
+    const CustomTooltip = ({ active, payload, label }) => {
+        if (active && payload && payload.length) {
+            return (
+                <div style={{ backgroundColor: "#00060e", padding: "10px", borderRadius: "5px", color: "white" }}>
+                    <p>{`Year : ${label}`}</p>
+                    <p>{`Profit : ${(payload[0].value / 1000).toFixed(1)} K`}</p>
+                </div>
+            );
+        }
+        return null;
+    };
+
+    return (
+        <div className="calculator-section-chart-section-chart" style={{ height: 400, backgroundColor: "#00060e" }}>
+            <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                    data={data}
+                    margin={{ top: 20, right: 30, left: -15, bottom: 5 }}
+                    barGap={50}
+                    barCategoryGap="25%"
+                >
+                    <CartesianGrid horizontal vertical={false} stroke="#1e2a38" strokeDasharray="3 3" />
+                    <XAxis dataKey="year" tick={{ fill: "#ffffff", fontSize: 14 }} />
+                    <YAxis
+                        tick={{ fill: "#ffffff", fontSize: 14 }}
+                        domain={[0, Math.max(...data.map(d => d.value)) + 1000]} // Adjusting scale dynamically
+                        tickFormatter={(tick) => `${(tick / 1000).toFixed(1)} K`} // Displaying in K format
+                    />
+                     <Tooltip content={<CustomTooltip />} />
+                    <Bar
+                        dataKey="value"
+                        fill="#1a3151"
+                        stroke="#0166ff"
+                        strokeWidth={2}
+                        radius={[9, 9, 9, 9]}
+                        barSize={100}
+                        label={renderCustomizedLabel}
+                    />
+                    <text
+                        x="50%"
+                        y="100%"
+                        textAnchor="middle"
+                        fill="#ffffff"
+                        fontSize={16}
+                        fontWeight="bold"
+                    >
+                        Years
+                    </text>
+                </BarChart>
+            </ResponsiveContainer>
+        </div>
     );
 };
 
