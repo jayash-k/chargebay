@@ -1,0 +1,21 @@
+name: Deploy to Hostinger
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to Hostinger
+      run: |
+        sudo apt-get update
+        sudo apt-get install lftp
+        lftp -u ${{ secrets.HOSTINGER_USERNAME }},${{ secrets.HOSTINGER_PASSWORD }} -e "mirror -R . /public_html; quit" ${{ secrets.HOSTINGER_FTP_SERVER }}
+
