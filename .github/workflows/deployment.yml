@@ -17,5 +17,4 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install lftp
-        lftp -u ${{ secrets.HOSTINGER_USERNAME }},${{ secrets.HOSTINGER_PASSWORD }} -e "mirror -R . /public_html; quit" ${{ secrets.HOSTINGER_FTP_SERVER }}
-
+        lftp -u ${{ secrets.HOSTINGER_USERNAME }},${{ secrets.HOSTINGER_PASSWORD }} -e "set ssl:verify-certificate no; mirror -R . /public_html; quit" ${{ secrets.HOSTINGER_FTP_SERVER }}
